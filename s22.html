@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <script src="js/jqurey-1.9.1.min.js"></script>
+    <title>s22</title>
+    <style>
+        body {
+            height: 5000px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        span {
+            display: block;
+        }
+
+        li {
+            width: 100px;
+            height: 50px;
+            line-height: 50px;
+            text-align: center;
+            border: 1px solid red;
+            cursor: pointer;
+        }
+
+        .change {
+            background: red;
+        }
+
+        .box {
+            width: 410px;
+            margin: 0 auto;
+        }
+
+        .colum1, .tbody, .colum2 {
+            float: left;
+        }
+    </style>
+</head>
+<body>
+<div class="box">
+    <ul class="colum1">
+        <li>11点</li>
+        <li>12点</li>
+        <li>13点</li>
+        <li>14点</li>
+    </ul>
+    <div class="tbody">
+        <ul class="colum2">
+            <li>11</li>
+            <li>21</li>
+            <li>31</li>
+            <li>31</li>
+        </ul>
+        <ul class="colum2">
+            <li>11</li>
+            <li>21</li>
+            <li>31</li>
+            <li>31</li>
+        </ul>
+        <ul class="colum2">
+            <li>11</li>
+            <li>21</li>
+            <li>31</li>
+            <li>31</li>
+        </ul>
+        <div style="clear:both"></div>
+    </div>
+    <div style="clear:both"></div>
+</div>
+<script>
+    jQuery(function () {
+
+        $(".colum2>li").click(function () {
+            var li = $(this);//当前项目
+            var idx = li.index();//当前项目的索引值
+
+
+//            var id = idx + " ";
+//            console.log(typeof(id))
+
+            $(".tbody ul").each(function () {
+//                var item = $(this).find(`li:eq(${idx})`);
+                                          //动态拼接索引值
+                var item = $(this).find("li:eq("+idx+")");
+//                var item = $(this).find("li").eq(idx);
+                console.log(item);
+                item.removeClass("change");
+            });
+
+            li.addClass("change");
+//            $(".colum1").find("li:eq("+(3-idx)+")").addClass("change");
+            $(".colum1").find("li").eq(3-idx).addClass("change");
+
+        })
+
+    });
+</script>
+</body>
+</html3

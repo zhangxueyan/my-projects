@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Todo</title>
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+    <script type="text/javascript" src="js/jqurey-1.9.1.min.js"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/vue/2.0.5/vue.js"></script>
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+        a{
+            text-decoration:none;
+        }
+
+        table{
+
+            border-collapse: collapse; /* 边框合并属性  */
+            table-layout: fixed;
+            margin:0 auto;
+
+        }
+        td{
+            width:200px;
+            height: 50px;
+            text-align: center;
+        }
+
+    </style>
+    <style>
+        .slide_column {
+            position: fixed;
+            left: 0;
+            top: 10%;
+            cursor: pointer;
+        }
+
+        .slide_box {
+            width: 280px;
+            height: 500px;
+            padding: 10px;
+            background-color: rgb(255, 255, 255);
+            border: 1px solid rgb(255, 112, 22);
+            position: absolute;
+            left: 0;
+            top: 60px;
+        }
+
+        .slide_column1 {
+            font-size: 20px;
+            color: rgb(255, 112, 22);
+            position: absolute;
+            left: 60px;
+            top: -30px;
+
+        }
+
+        .slide_quantity {
+            font-size: 16px;
+            position: absolute;
+            text-align: center;
+            left: 18px;
+            top: 32px;
+            width: 2em;
+            border: 1px solid;
+        }
+
+        .slide_column2 {
+            margin-left: 120px;
+            margin-bottom: 20px;
+        }
+
+        .slide_column2 > a {
+            display: inline-block;
+            line-height: 22px;
+            text-align: center;
+        }
+
+        .slide_column3 {
+            color: rgb(160, 160, 160);
+            width: 23px;
+            line-height: 23px;
+            border-radius: 50%;
+            background-color: rgb(220, 220, 220);
+        }
+
+        .slide_column7 {
+            color: #fff;
+            background-color: rgb(255, 112, 22);
+        }
+
+        .slide_column4 {
+            font-size: 16px;
+            color: rgb(255, 112, 22);
+        }
+
+        .slide_column8, .slide_column6 {
+            min-width: 12px;
+        }
+
+        .slide_boxmain {
+            height: 360px;
+        }
+
+        .slide_colunm9 {
+            height: 58px;
+            padding: 15px 10px 20px 20px;
+            border: 1px solid rgb(224, 224, 224);
+            background-color: rgb(250, 250, 250);
+            margin-bottom: 20px;
+        }
+
+        .slide_colunm9 > li {
+            float: left;
+        }
+
+        .slide_colunm10 {
+            background:#ccc;
+            margin-bottom: 20px;
+            cursor: pointer;
+        }
+
+        .slide_colunm11 {
+            font-size: 16px;
+            color: #000;
+            margin-bottom: 20px;
+        }
+
+        .slide_colunm12 {
+            font-size: 16px;
+            color: rgb(255, 112, 22);
+        }
+
+        .slide_colunm13 {
+            line-height: 54px;
+            border-top: 1px solid rgb(224, 224, 224);
+
+            padding-left: 50px;
+        }
+
+        .slide_colunm14 {
+            font-size: 16px;
+            color: #ff7016;
+            white-space: nowrap;
+        }
+
+        .slide_colunm15 {
+            display: block;
+            width: 225px;
+            line-height: 45px;
+            border-radius: 5px;
+            background-color: rgb(255, 112, 22);
+            text-align: center;
+            margin-left: 5px;
+            font-size: 20px;
+            color: #fff;
+        }
+        .slide_colunm9>li:nth-child(2){
+            float:right;
+        }
+
+        .purchase{
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+<div id="APP_shoppingCart">
+    <table border="1">
+        <tr>
+            <td>课程名称</td>
+            <td>发音课</td>
+            <td>基础课</td>
+            <td>外交课程</td>
+            <td>费用</td>
+            <td>购买</td>
+        </tr>
+        <tr class="tbody-tr" data-id="1">
+            <td data-name="零基础入门套餐">零基础入门套餐</td>
+            <td>15节</td>
+            <td data-period="一个月">一个月</td>
+            <td>60天</td>
+            <td data-price="1298">1298</td>
+            <td class="purchase" v-on:click="addGoods">购买</td>
+        </tr>
+        <tr class="tbody-tr" data-id="2">
+            <td data-name="零基础入门套餐">零基础入门套餐</td>
+            <td>15节</td>
+            <td data-period="一个月">一个月</td>
+            <td>60天</td>
+            <td data-price="1298">1298</td>
+            <td class="purchase" v-on:click="addGoods">购买</td>
+        </tr>
+    </table>
+    <div class="slide_column">
+        <span class="slide_quantity">{{totalQuantity}}</span>
+
+        <div class="slide_box">
+            <p class="slide_column1">课程购物</p>
+            <ul class="slide_column2">
+                <a href="javascript:;" class="slide_column3"><</a>
+                <a class="slide_column4 slide_column8">1</a>
+                <a class="slide_column4 slide_column5">/</a>
+                <a class="slide_column4 slide_column6">1</a>
+                <a href="javascript:;" class="slide_column3 slide_column7">></a>
+            </ul>
+            <div class="slide_boxmain">
+                <ul class="slide_colunm9" v-for="(goods,idx) in goodslist">
+                    <li>
+                        <p class="slide_colunm11">{{goods.name}}</p>
+
+                        <p class="slide_colunm12">{{goods.price}}X{{goods.quantity}}</p>
+                    </li>
+                    <li>
+                        <div class="slide_colunm10" v-on:click="delGoods" v-bind:data-idx="idx">删除</div>
+                        <p>有效期:<span>{{goods.period}}</span></p>
+                    </li>
+                    <div class="clearfix"></div>
+                </ul>
+            </div>
+            <p class="slide_colunm13">
+                <span class="slide_colunm11">订单总金额：</span>
+                <span class="slide_colunm14">￥</span>
+                <span class="slide_colunm14 slide_total" style="min-width:12px">{{totalPrice}}</span>
+            </p>
+            <a class="slide_colunm15" href="javascritp:;">结算</a>
+
+        </div>
+    </div>
+</div>
+<script>
+    var APP_shoppingCart =  new Vue({
+        el: '#APP_shoppingCart',
+        data: {
+            goodslist:[],
+            totalQuantity: 0
+        },
+        methods: {
+            addGoods: function (event) {
+                var $item_target = $(event.target);
+//                console.log($item_target)
+                var $get_name = $item_target.parent().find("td[data-name='零基础入门套餐']").data("name");
+                var $get_price = $item_target.parent().find("td[data-price=1298]").data("price");
+                var $get_period = $item_target.parent().find("td[data-period='一个月']").data("period");
+
+                var $get_id = $item_target.parent().data("id");
+
+//              console.log($get_name,$get_price,$get_period)
+
+                for (var i = 0; i < this.goodslist.length; i++) {
+                    var goods = this.goodslist[i];
+                    if (goods.id == $get_id){
+                        goods.quantity += 1;
+                        return;
+                    }
+
+                }
+
+                this.goodslist.push(
+                        {   id:$get_id,
+                            name: $get_name,
+                            price:$get_price,
+                            period: $get_period,
+                            quantity:1
+                        }
+                )
+
+
+            },
+
+
+            delGoods: function (event) {
+//                垃圾筐的idx
+                var idx = $(event.target).data("idx");
+
+                console.log(idx)
+
+                var $goods_del = this.goodslist[idx];
+
+                $goods_del.quantity -= 1
+                if ($goods_del.quantity < 1) {
+                    this.goodslist.splice(idx, 1)
+                }
+
+
+
+            }
+        },
+
+        computed: {
+            totalPrice: function () {
+                var total = 0;
+                for (var i = 0; i < this.goodslist.length; i++) {
+                    var self = this.goodslist[i];
+                    total += self.quantity * self.price;
+                }
+                return total;
+            },
+
+
+            totalQuantity: function () {
+                var total = 0;
+                for (var i = 0; i < this.goodslist.length; i++) {
+                    var self = this.goodslist[i];
+                    total += self.quantity
+                }
+                return total;
+
+            }
+        }
+    })
+</script>
+</body>
+</html>

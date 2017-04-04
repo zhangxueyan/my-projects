@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Todo</title>
+    <script type="text/javascript" src="js/jqurey-1.9.1.min.js"></script>
+    <style type="text/css">
+        /*模块拖拽*/
+        .drag {
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            border: 1px solid #ddd;
+            background: #FBF2BD;
+            text-align: center;
+            padding: 5px;
+            top: 100px;
+            left: 20px;
+
+        }
+        .drag:hover{
+            cursor: move;
+        }
+        .box{
+            width: 800px;
+            height: 1000px;
+            border: 1px solid #ddd;
+        }
+    </style>
+</head>
+<body>
+<!--模块拖拽-->
+<a class="drag">这个可以拖动哦 ^_^</a>
+
+<div class="box"></div>
+
+<script type="text/javascript">
+
+    // 模块拖拽
+    $(function () {
+        var $drag = $(".drag");
+        var _move = false;//移动标记
+        var _x, _y;//鼠标离控件左上角的相对位置
+        $drag.click(function () {
+            //alert("click");//点击（松开后触发）
+        }).mousedown(function (e) {
+            _move = true;
+            _x = e.pageX - parseInt($drag.css("left"));
+            _y = e.pageY - parseInt($drag.css("top"));
+//                $drag.fadeTo(20, 0.5);//点击后开始拖动并透明显示
+        });
+        $(document).mousemove(function (e) {
+            if (_move) {
+                var x = e.pageX - _x;//移动时根据鼠标位置计算控件左上角的绝对位置
+                var y = e.pageY - _y;
+                $drag.css({top: y, left: x});//控件新位置
+            }
+        }).mouseup(function () {
+            _move = false;
+//                $drag.fadeTo("fast", 1);//松开鼠标后停止移动并恢复成不透明
+        });
+
+
+
+
+//
+//            $("#question_pic").bind("click",function(event){
+//                event.stopPropagation();  //防止冒泡事件响应
+//                $("#chat_question").hide("slow");
+//            });
+//
+//
+//            $("#chatLineHolder").scrollTop(10000);//保持最下一行，不用滚
+    });
+</script>
+</body>
+
+</html>
