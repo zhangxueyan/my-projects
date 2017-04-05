@@ -77,25 +77,21 @@
     jQuery(function () {
 
         $(".colum2>li").click(function () {
-            var li = $(this);//当前项目
-            var idx = li.index();//当前项目的索引值
+            var $li = $(this);//当前项目
+            var idx = $li.index();//当前项目的索引值
 
-
-//            var id = idx + " ";
-//            console.log(typeof(id))
 
             $(".tbody ul").each(function () {
 //                var item = $(this).find(`li:eq(${idx})`);
-                                          //动态拼接索引值
-                var item = $(this).find("li:eq("+idx+")");
-//                var item = $(this).find("li").eq(idx);
+                //动态拼接索引值
+//                var item = $(this).find("li:eq("+idx+")");
+                var item = $(this).find("li").eq(idx);
                 console.log(item);
                 item.removeClass("change");
             });
-
-            li.addClass("change");
+            $li.addClass("change");
 //            $(".colum1").find("li:eq("+(3-idx)+")").addClass("change");
-            $(".colum1").find("li").eq(3-idx).addClass("change");
+            $(".colum1").find("li").eq(idx).addClass("change");
 
         })
 
