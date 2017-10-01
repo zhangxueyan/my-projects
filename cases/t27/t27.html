@@ -1,0 +1,99 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>t27口风琴展示效果</title>
+<script type="text/javascript" src="http://www.jq22.com/demo/jQuery-sfq20160303/js/jquery-1.7.2.min.js"></script>
+<link href="http://www.jq22.com/demo/jQuery-sfq20160303/css/jq22.css" type="text/css" rel="stylesheet">
+<script src="http://www.jq22.com/demo/jQuery-sfq20160303/js/jquery.kwicks.min.js"></script>
+    <style type="text/css">
+        #body_adv{
+            width:880px;
+            margin:0 auto;
+            padding-top:100px;
+        }
+    </style>
+</head>
+
+<body id="body_adv">
+<div class="shw1180">
+  <div class="cfix md_sl">
+    <div class="col_w900 left">
+      <div style="width:880px; height:500px; overflow:hidden" id="liangfajdt">
+        <ul style="width:880px; height:500px; overflow:hidden" class="kwicks kwicks-horizontal kwicks-processed">
+          <li class="kwicks-selected kwicks-collapsed kwicks-expanded" style="left:0px;width:39px;">
+            <div style="position:relative">
+              <div class="jdt_img"><a href=""><img src="img/picture1.jpg" width="600" height="500"></a></div>
+              <div class="white lf_jdttitle"><a href="">图片信息介绍1</a></div>
+              <div class="lf_jdtbg"></div>
+            </div>
+          </li>
+          <li style="left:40px;width:600px;">
+            <div style="position:relative">
+              <div class="jdt_img"><a href=""><img src="img/picture2.jpg" width="600" height="500"></a></div>
+              <div class="white lf_jdttitle"><a href="">图片信息介绍2</a></div>
+              <div class="lf_jdtbg"></div>
+            </div>
+          </li>
+          <li style="left:641px;width:39px;" class="kwicks-collapsed">
+            <div style="position:relative">
+              <div class="jdt_img"><a href=""><img src="img/picture3.jpg" width="600" height="500"></a></div>
+              <div class="white lf_jdttitle"><a href="">图片信息介绍3</a></div>
+              <div class="lf_jdtbg"></div>
+            </div>
+          </li>
+          <li style="left:681px;width:39px;" class="kwicks-collapsed">
+            <div style="position:relative">
+              <div class="jdt_img"><a href=""><img src="img/picture4.jpg" width="600" height="500"></a></div>
+            </div>
+          </li>
+          <li style="left:721px;width:39px;" class="kwicks-collapsed">
+            <div style="position:relative">
+              <div class="jdt_img"><a href=""><img src="img/picture2.jpg" width="600" height="500"></a></div>
+              <div class="white lf_jdttitle"><a href="">图片信息介绍4</a></div>
+              <div class="lf_jdtbg"></div>
+            </div>
+          </li>
+          <li style="left:761px;width:39px;" class="kwicks-collapsed">
+            <div style="position:relative">
+              <div class="jdt_img"><a href=""><img src="img/picture1.jpg" width="600" height="500"></a></div>
+              <div class="white lf_jdttitle"><a href="">图片信息介绍5</a></div>
+              <div class="lf_jdtbg"></div>
+            </div>
+          </li>
+          <li style="left:801px;width:39px;" class="kwicks-collapsed">
+            <div style="position:relative">
+              <div class="jdt_img"><a href=""><img src="img/picture2.jpg" width="600" height="500"></a></div>
+              <div class="white lf_jdttitle"><a href="">图片信息介绍6</a></div>
+              <div class="lf_jdtbg"></div>
+            </div>
+          </li>
+          <li style="right:0;width:39px;" class="kwicks-collapsed">
+            <div style="position:relative">
+              <div class="jdt_img"><a href=""><img src="img/picture3.jpg" width="600" height="500"></a></div>
+              <div class="white lf_jdttitle"><a href="">图片信息介绍7</a></div>
+              <div class="lf_jdtbg"></div>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+<script type="text/javascript">
+	$(function() {
+		jdt_lie_w=($("#liangfajdt ul").width()-600)/($("#liangfajdt ul li").length-1);
+		jdt_lie_w=Math.ceil(jdt_lie_w);
+		jdt_lie_sed=$("#liangfajdt ul").width()-jdt_lie_w*($("#liangfajdt ul li").length-1);
+		$("#liangfajdt ul li").css("width",Number(jdt_lie_w)-1);
+		//$("#liangfajdt ul li.selected").css("width",jdt_lie_sed);
+		$('.kwicks').kwicks({
+			minSize : Number(jdt_lie_w)-1,
+			spacing : 1,
+			behavior: 'slideshow'
+		});
+	});
+</script>
+</body>
+</html>

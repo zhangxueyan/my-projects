@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>变换固定导航</title>
+    <script src="http://libs.baidu.com/jquery/1.10.2/jquery.min.js"></script>
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+            font-size: 12px;
+            color: #333;
+            list-style: none;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        .head {
+            width: 100%;
+            height: 100px;
+            background: #ccc;
+        }
+
+        .fixed {
+            width: 100%;
+            height: 100px;
+            background: red;
+            position: fixed;
+            left: 0;
+            top: 0;
+        }
+
+        .slidebar {
+            position: fixed;
+            left: 285px;
+            top: 285px;
+        }
+
+        .slidebar > li {
+            width: 24px;
+            padding: 10px 5px;
+            line-height: 14px;
+            background: #333;
+            border-top: 1px solid #b1aaaa;
+            text-align: center;
+            color: #666;
+        }
+
+        .slidebar > li:hover {
+            background: darkred;
+        }
+
+        .slidebar > li > a {
+            color: #fff;
+        }
+
+        li.lei {
+            background: darkred;
+        }
+
+        .clearfix {
+            clear: both;
+        }
+
+        .content > li {
+            float: left;
+        }
+
+        #wrap,.f{
+            width: 1000px;
+            height: 670px;
+            border: 1px solid red;
+            margin: 20px auto;
+        }
+        #wrap{
+            height:1000px;
+        }
+        .fb{
+            height:300px;
+        }
+    </style>
+</head>
+<body>
+<div class="head"></div>
+<div class="fixed"></div>
+<ul class="slidebar">
+    <li class="s1"><a href="#s1">品质保障</a></li>
+    <li class="s2"><a href="#s2">服饰美妆</a></li>
+    <li class="s3"><a href="#s3">家用电器</a></li>
+    <li class="s4"><a href="#s3">电脑数码</a></li>
+    <li class="s5"><a href="#s3">还没逛够</a></li>
+    <li class="s6"><a href="#s6">返回顶部</a></li>
+</ul>
+
+<div id="wrap">
+    <h2>News & Events</h2>
+    <ul class="content">
+        <li><span>最高4800元经济型网站建设服务面向中小微用户</span></li>
+        <li><span>最高4800元经济型网站建设服务面向中小微用户</span></li>
+        <div class="clearfix"></div>
+    </ul>
+</div>
+
+
+<div class="f f1"><p>品质保障</p></div>
+<div class="f f2"><p>服饰美妆</p></div>
+<div class="f f3"><p>家用电器</p></div>
+<div class="f f4"><p>电脑数码</p></div>
+<div class="f f5"><p>还没逛够</p></div>
+<div class="f fb"><p>页脚</p></div>
+
+<script>
+
+    $(".fixed").hide();
+
+    $(".slidebar").hide();
+
+    $(window).scroll(function () {
+        var h = $(this).scrollTop();
+        if (h > 100) {
+            $(".fixed").slideDown();
+        }
+        else {
+            $(".fixed").slideUp();
+        }
+
+        if (h > 699) {
+            $(".slidebar").slideDown();
+            $(".s1").addClass("lei").siblings().removeClass("lei");
+        }
+        else {
+            $(".slidebar").slideUp();
+        }
+
+        if (h > 1399) {
+            $(".s2").addClass("lei").siblings().removeClass("lei");
+        }
+
+        if (h > 2099) {
+            $(".s3").addClass("lei").siblings().removeClass("lei");
+        }
+
+        if (h > 2765) {
+            $(".s4").addClass("lei").siblings().removeClass("lei");
+        }
+        if (h > 3465) {
+            $(".s5").addClass("lei").siblings().removeClass("lei");
+        }
+    })
+</script>
+
+<script>
+    $(".s1").click(function(){
+        $('html,body').animate({scrollTop:699},1000);//回到顶端
+    })
+
+    $(".s2").click(function(){
+        $('html,body').animate({scrollTop:1399},1000);//回到顶端
+    })
+
+    $(".s3").click(function(){
+        $('html,body').animate({scrollTop:2099},1000);//回到顶端
+    })
+
+    $(".s4").click(function(){
+        $('html,body').animate({scrollTop:2765},1000);//回到顶端
+    })
+
+
+    $(".s5").click(function(){
+        $('html,body').animate({scrollTop:3465},1000);//回到顶端
+    })
+
+    $(".s6").click(function(){
+        $('html,body').animate({scrollTop:0},1000);//回到顶端
+    })
+
+    //console.log(document.body.scrollTop)滚动条的高度
+
+
+
+</script>
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no"/>
+    <title>t17弹出提示信息框</title>
+    <link href="green.css" rel="stylesheet" type="text/css"/>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            font-family: "微软雅黑", Arial;
+            font-size: 14px;
+        }
+        .main{
+            width:500px;
+            margin: 50px auto;
+        }
+        input{
+            border: 1px solid #ccc;
+            padding: 3px;
+            margin:5px;
+        }
+        button{
+            margin:5px 0 0 70px;
+            padding: 3px;
+        }
+    </style>
+
+</head>
+<body>
+<div class="main">
+    <p>姓名:<input value="李某某"></p>
+
+    <p>年龄:<input value="25"></p>
+
+    <p>
+        <button id="btn">点击查看</button>
+    </p>
+</div>
+<script>
+    var btn = document.getElementById("btn");
+    var input = document.getElementsByTagName("input");
+
+    function demo(a,b){
+        alert(a.value + " "+ b.value);
+    }
+    btn.onclick = function () {
+        demo(input[0],input[1]);
+    }
+</script>
+</body>
+</html>
+

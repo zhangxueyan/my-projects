@@ -1,0 +1,55 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="Content-Language" content="zh-CN">
+<title>t23产品详情页放大效果</title>
+<meta name="keywords" content="">
+<meta name="description" content="">
+<meta name="copyright" content="" />
+
+<script src="js/jquery-1.9.1.min.js"></script>
+<script src="js/common.js"></script>
+
+<link href="css/common.css" rel="stylesheet" type="text/css" />
+
+<script type="text/javascript">
+  $(document).ready(function(){
+	  var showproduct = {
+		  "boxid":"showbox",
+		  "sumid":"showsum",
+		  "boxw":400,//宽度,该版本中请把宽高填写成一样
+		  "boxh":400,//高度,该版本中请把宽高填写成一样
+		  "sumw":60,//列表每个宽度,该版本中请把宽高填写成一样
+		  "sumh":60,//列表每个高度,该版本中请把宽高填写成一样
+		  "sumi":7,//列表间隔
+		  "sums":5,//列表显示个数
+		  "sumsel":"sel",
+		  "sumborder":1,//列表边框，没有边框填写0，边框在css中修改
+		  "lastid":"showlast",
+		  "nextid":"shownext"
+		  };//参数定义	  
+	 $.ljsGlasses.pcGlasses(showproduct);//方法调用，务必在加载完后执行
+  });
+</script>
+</head>
+
+<body>
+<div style="width:600px; margin:0 auto;padding-top:200px;">
+<div id="showbox">
+  <img src="images/photos/img01.png" width="270" height="270" />
+  <img src="images/photos/img02.png" width="320" height="320" />
+  <img src="images/photos/img03.png" width="430" height="430" />
+  <img src="images/photos/img04.png" width="290" height="290" />
+  <img src="images/photos/img05.png" width="786" height="525" />
+  <img src="images/photos/img06.png" width="300" height="300" />
+</div><!--展示图片盒子-->
+<div id="showsum"></div><!--展示图片里边-->
+<p class="showpage">
+  <a href="javascript:void(0);" id="showlast"> < </a>
+  <a href="javascript:void(0);" id="shownext"> > </a>
+</p>
+
+</div>
+</body>
+</html>

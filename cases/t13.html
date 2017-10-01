@@ -1,0 +1,66 @@
+<!DOCTYPE>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no"/>
+    <title>t113即时输入改变样式</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            font-family: "微软雅黑", Arial;
+            font-size: 16px;
+        }
+        .clearfix{
+            clear: both;
+        }
+        .main{
+            width: 500px;
+            margin:50px auto;
+        }
+        .main>li{
+            float: left;
+            height:100px;
+            width:100px;
+            background-color: green;
+            margin-right: 10px;
+            opacity:0.5;
+            filter:alpha(opacity=50);
+        }
+        li.current{
+            opacity:1.0;
+            filter:alpha(opacity=100);
+        }
+
+
+
+    </style>
+
+</head>
+<body>
+<ul class="main">
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <div class="clearfix"></div>
+
+</ul>
+<script>
+    window.onload = function () {
+        var oli = document.getElementsByTagName("li");
+        for(var i=0;i<oli.length;i++){
+            oli[i].onmouseenter=function(){
+                this.className="current";
+            }
+            oli[i].onmouseleave=function(){
+                this.className="";
+            }
+        }
+    }
+</script>
+
+</body>
+</html>
+

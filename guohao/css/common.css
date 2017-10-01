@@ -1,0 +1,30 @@
+        
+
+
+       
+        *{font-size:16px;
+          color:#777;
+        font-family:arial,"微软雅黑";}
+        li{list-style:none;}
+        a{ text-decoration:none;
+           color:red;}
+
+    .clearfix{clear: both;}
+    
+
+
+    .navbar-nav{float: right;}
+
+    footer{background-color: #4879b4;
+           padding:40px 0 20px 0;
+           margin-top:20px;}
+    footer .container p{color:white;
+                        line-height: 50px;}
+
+
+    .copyright{background-color: #3d6799;}
+    .copyright p{margin: 0;
+                 padding: 0;
+                line-height: 50px;
+                color:black;
+                text-align: center;}

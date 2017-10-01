@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no"/>
+    <title>demo</title>
+    <script src="http://cdn.static.runoob.com/libs/jquery/1.10.2/jquery.min.js">
+    </script>
+    <style>
+        *{
+            margin:0;
+            padding:0 ;
+            list-style: none;
+            font-family:"微软雅黑",arial;
+            font-size:14px;
+        }
+        a{
+            text-decoration: none;
+        }
+        .main{
+            width:500px;
+            margin: 100px auto;
+            border:1px solid #e6e6e6;
+            box-shadow:0px 2px 3px #ececec;
+            padding:50px;
+            border-radius:10px;
+        }
+        .t{
+            margin-bottom: 5px;
+        }
+        .t h1 a{
+            font-size: 22px;
+            color: #0a8cd2;
+        }
+        .t dl dd a{
+            font-size: 20px;
+            color: #0a8cd2;
+            font-weight:bold;
+        }
+        .t h1,.t dl dd{
+            border-bottom: 1px solid #f2f2f2;
+            line-height: 60px;
+            border-radius:5px;
+        }
+        .t dl{
+            padding:0 0 0 30px;
+        }
+    </style>
+</head>
+<body>
+<div class="main">
+    <ol>
+        <li class="t">
+            <h1><a href="javascript:void(0);">1、第一章 js/jquery相关代码</a></h1>
+            <dl>
+                <dd><a href="t11.html" target="_blank">1.1去除字符串左右的空格</a></dd>
+                <dd><a href="t12.html" target="_blank">1.2倒计时效果</a></dd>
+                <dd><a href="t13.html" target="_blank">1.3鼠标移入移除改变透明度</a></dd>
+                <dd><a href="t14.html" target="_blank">1.4变换顶部固定导航</a></dd>
+                <dd><a href="t15/t15.html" target="_blank">1.5鼠标经过有下拉遮罩</a></dd>
+                <dd><a href="t16/t16.html" target="_blank">1.6网页换肤效果</a></dd>
+                <dd><a href="t17.html" target="_blank">1.7弹出提示信息框</a></dd>
+                <dd><a href="t18.html" target="_blank">1.8改变和重置样式</a></dd>
+                <dd><a href="t19.html" target="_blank">1.9点击循环改变颜色</a></dd>
+                <dd><a href="t110.html" target="_blank">1.10点击元素显示其内容</a></dd>
+                <dd><a href="t111.html" target="_blank">1.11数字求和效果</a></dd>
+                <dd><a href="t112.html" target="_blank">1.12弹出窗口效果</a></dd>
+                <dd><a href="t113.html" target="_blank">1.13即时输入改变样式</a></dd>
+                <dd><a href="t114.html" target="_blank">1.14简易选项卡效果</a></dd>
+                <dd><a href="t115/t115.html" target="_blank">1.15点击显示/隐藏下拉列表</a></dd>
+            </dl>
+        </li>
+
+        <li class="t">
+            <h1><a href="javascript:void(0);">2、第二章 常用图片相关代码</a></h1>
+            <dl>
+                <dd><a href="t21/t21.html" target="_blank">2.1轮播图效果展示</a></dd>
+                <dd><a href="t22.html" target="_blank">2.2商品分类展示</a></dd>
+                <dd><a href="t23/t23.html" target="_blank">2.3产品详情放大效果</a></dd>
+                <dd><a href="t24/t24.html" target="_blank">2.4标签页效果</a></dd>
+                <dd><a href="t25/t25.html" target="_blank">2.5点击播放视频</a></dd>
+                <dd><a href="t26/t26.html" target="_blank">2.6插入动态地图</a></dd>
+                <dd><a href="t27/t27.html" target="_blank">2.7团队展示口风琴效果</a></dd>
+            </dl>
+        </li>
+
+        <li class="t">
+            <h1><a href="javascript:void(0);">3、第三章 CSS3相关效果实现</a></h1>
+            <dl>
+                <dd><a href="t31.html" target="_blank">3.1文字上下晃动效果</a></dd>
+                <dd><a href="t32.html" target="_blank">3.2点击按钮缓慢向下移动</a></dd>
+                <dd><a href="t33.html" target="_blank">3.3添加锚点实现本页跳转效果</a></dd>
+                <dd><a href="t34.html" target="_blank">3.4渐变效果实现</a></dd>
+                <dd><a href="t35/t35.html" target="_blank">3.5转换效果实现</a></dd>
+            </dl>
+        </li>
+
+
+
+
+    </ol>
+</div>
+
+<script>
+    $(".t dl").hide();
+    $(".t").click(function(){
+        $(this).find("dl").slideToggle();
+        $(this).siblings().children("dl").slideUp();
+    });
+
+    $(".t").mouseenter(function(){
+        $(this).find("h1").animate({
+            paddingLeft:20
+        }).css({"background-color":"#54a954"});
+        $(this).find("h1 a").css({"color":"#fff"});
+    }).mouseleave(function(){
+        $(this).find("h1").animate({
+            paddingLeft:0
+        }).css({"background-color":"#fff"});
+        $(this).find("h1 a").css({"color":"#0a8cd2"});
+    })
+
+
+    $(".t dd").mouseenter(function(){
+        $(this).animate({
+            paddingLeft:20
+        }).css({"background-color":"#54a954"});
+        $(this).find("a").css({"color":"#fff"});
+    }).mouseleave(function(){
+        $(this).animate({
+            paddingLeft:0
+        }).css({"background-color":"#fff"});
+        $(this).find("a").css({"color":"#0a8cd2"});
+    });
+
+</script>
+
+</body>
+</html>
+

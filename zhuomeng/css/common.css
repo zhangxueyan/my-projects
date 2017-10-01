@@ -1,0 +1,291 @@
+/*重置区域*/
+* {
+    font-size: 14px;
+    color: #333;
+    font-family: arial, "微软雅黑";
+}
+
+body, ul, li, span, dl, dt, dd, p, input {
+    margin: 0;
+    padding: 0;
+}
+
+li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+input {
+    outline: none;
+}
+
+/*顶部页眉区域*/
+.header {
+    width: 1000px;
+    margin: 0 auto;
+    margin-bottom: 20px;
+}
+
+.logo {
+    float: left;
+    margin-top: 9px;
+}
+
+.nav {
+    float: right;
+    margin-top: 38px;
+    padding-right: 10px;
+}
+
+.nav li {
+    float: left;
+    margin-right: 32px;
+}
+
+.nav li a {
+    font-size: 18px;
+}
+
+.nav li a:hover {
+    color: #0c328c;
+}
+
+.clearfix {
+    clear: both;
+}
+
+/*广告区域*/
+.banner {
+    position: relative;
+    height: 500px;
+    overflow: hidden;
+}
+
+.img_box {
+}
+
+.img_box img {
+    display: block;
+    float: left;
+}
+
+.arrow_l, .arrow_r {
+    position: absolute;
+    top: 50%;
+    margin-top: -50px;
+    cursor: pointer;
+}
+
+.arrow_l {
+    left: 0;
+}
+
+.arrow_r {
+    right: 0;
+}
+
+.rounds {
+    position: absolute;
+    left: 50%;
+    margin-left: -40px;
+    top: 95%;
+}
+
+.rounds li {
+    width: 20px;
+    height: 20px;
+    background-color: #fff;
+    border-radius: 50%;
+    float: left;
+    margin-right: 10px;
+    cursor: pointer;
+}
+
+.rounds .current {
+    background-color: #0c328c;
+}
+
+/* 广告部分结束 */
+
+.contact_informaton {
+    position: fixed;
+    right: 0;
+    top: 50%;
+}
+
+.contact_informaton dd {
+    height: 70px;
+    width: 70px;
+    background-color: #808080;
+    margin-bottom: 1px;
+}
+
+.contact_informaton .changecolor {
+    background-color: #d2000d;
+}
+
+/* 隐藏的在线留言部分 */
+.online_message, .hotline_phone, .attention_code {
+    position: absolute;
+    left: -222px;
+    top: 0;
+    width: 212px;
+    height: 212px;
+    border: 2px solid #d2000d;
+    background-color: white;
+}
+
+.online_message li {
+    margin-top: 10px;
+    margin-left: 10px;
+}
+
+.online_title, .hotline_title, .code_title {
+    background-color: #d2000d;
+    line-height: 40px;
+    text-align: center;
+}
+
+.online_title span, .hotline_title span, .code_title span {
+    font-size: 22px;
+    color: white;
+}
+
+.online_contact input, .online_phone input {
+    width: 120px;
+    height: 20px;
+}
+
+.online_content textarea {
+    width: 120px;
+    height: 50px;
+    display: block;
+    float: left;
+}
+
+.online_content p {
+    line-height: 50px;
+    float: left;
+}
+
+/* 隐藏的在线留言部分 */
+
+.hotline_phone li span {
+    font-size: 22px;
+}
+
+.hotline_phone li {
+    width: 160px;
+    margin: 0 auto;
+    margin-top: 30px;
+}
+
+/* 隐藏的服务热线部分属性 */
+
+.attention_code li {
+    margin-top: 15px;
+    margin-left: 40px;
+}
+
+/* 页脚区域 */
+
+.footer {
+    background-color: #f6f6f6;
+}
+
+.footer_small {
+    width: 1000px;
+    margin: 0 auto;
+    padding-top: 40px;
+    padding-bottom: 30px;
+}
+
+.footer_left {
+    width: 760px;
+    float: left;
+}
+
+.footer_right {
+    float: right;
+}
+
+.col_title {
+    margin-bottom: 30px;
+}
+
+.col_title li {
+    float: left;
+    margin-right: 85px;
+}
+
+.col_title li a {
+    font-size: 18px;
+}
+
+.col_content dl {
+    width: 72px;
+    float: left;
+    margin-right: 85px;
+}
+
+.col_content dd {
+    margin-bottom: 16px;
+}
+
+.col_content dd a, .footer_right p {
+    color: #666;
+}
+
+.footer_right p {
+    margin-top: 10px;
+}
+
+.col_content dd a:hover {
+    cursor: pointer;
+    color: #0f66b0;
+}
+
+/* 页脚区域结束 */
+
+/* 版权信息 */
+.copyright {
+    background-color: #88abda
+}
+
+.copyright dd {
+    line-height: 70px;
+    margin: 0 auto;
+    width: 1000px;
+    text-align: center;
+}
+
+/* 版权信息结束 */
+
+/* 子页面中的索引部分 */
+
+.index {
+    background-color: #f6f6f6;
+    margin-bottom: 30px;
+}
+
+.index_title {
+    width: 1000px;
+    margin: 0 auto;
+}
+
+.title_left {
+    float: left;
+    line-height: 80px;
+}
+
+.title_left span {
+    font-size: 22px;
+}
+
+.title_right {
+    float: right;
+    line-height: 80px;
+}

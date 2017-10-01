@@ -1,0 +1,27 @@
+/*关于我们css*/
+.content {
+    width: 1000px;
+    margin: 0 auto;
+}
+
+.con_text span {
+    font-size: 16px;
+    line-height: 180%;
+}
+
+.con_text{
+    margin-bottom: 20px;
+}
+
+.con_pict02 {
+    margin-bottom: 60px;
+    margin-top: 20px;
+}
+
+.con_pict02 li {
+    float: left;
+}
+
+.con_pict01 img, .con_pict02 li img {
+    display: block;
+}

@@ -1,0 +1,44 @@
+<!DOCTYPE>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no"/>
+    <title>t19点击循环改变颜色</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            font-family: "微软雅黑", Arial;
+            font-size: 22px;
+        }
+        #dv{
+            width:500px;
+            margin:100px auto;
+            line-height: 60px;
+            cursor: pointer;
+            text-align: center;
+        }
+        #dv span{
+            color: white;
+        }
+
+    </style>
+
+</head>
+<body>
+<div id="dv"><span>点击可以改变背景颜色</span></div>
+<script>
+    var colors = ["red","green","blue"]//相当于把colors里面的颜色都遍历一遍for语法分开写了，初始设置i=0;
+    var i=0;//声明并初始化设置索引值变量
+    var dv=document.getElementById("dv");
+    dv.style.background=colors[i];//初始背景是colors[0]
+    dv.onclick =function(){
+        i++;//当开始点击的时候执行+1的操作
+        if(i>=colors.length) i=0;//判断i是否超过length 因为最后是length-1 ，如果超过从0开始
+        dv.style.background=colors[i];
+    }
+</script>
+</body>
+</html>
+

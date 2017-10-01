@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>个人中心</title>
+    <script type="text/javascript" src="js/jqurey-1.9.1.min.js"></script>
+    <!--<script type="text/javascript" src="js/vue.js"></script>-->
+    <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/vue/2.1.3/vue.js"></script>
+    <style>
+        nav{
+            margin-top:20px;
+        }
+        nav a,nav span{
+            display: inline-block;
+            width:80px;
+            line-height: 40px;
+            font-size: 20px;
+            color:#666;
+            margin-left:20px;
+            background:skyblue;
+            text-align: center;
+            cursor:pointer;
+        }
+        .totalprice,.totalnumber{
+            line-height: 50px;
+            width:536px;
+            background:green;
+            color:#ffffff;
+            text-align: center;
+            margin-left:40px;
+        }
+    </style>
+</head>
+<body>
+<div id="main">
+    <nav>
+        <p v-for="(item,index) in items">
+            <span>{{item.name}}</span>
+            <span>{{item.price}}</span>
+            <span v-on:click="updateNum(item,-1)" v-bind:data-index="index">-</span>
+            <span>{{item.num}}</span>
+            <span v-on:click="updateNum(item,1)">+</span>
+            <span>{{item.price*item.num}}</span>
+        </p>
+        <p class="totalnumber">{{totalNumber}}个</p>
+        <p class="totalprice">{{totalPrice}}元</p>
+    </nav>
+
+
+    <!--以上是一个item-->
+
+
+    <nav  v-for="good in goods">
+        <a class="name">{{good.name}}</a><a class="price" >{{good.price}}</a><a @click="addItem(good)">购买</a>
+    </nav>
+
+</div>
+
+<script>
+    window.onload = function(){
+        var vm = new Vue({
+            el: '#main',
+            data: {
+//                goods:{
+//                    html:{
+//                        property:{
+//                            id:'xxx213',
+//                            price:1234
+//                        },
+//                        item:{
+//                            num:0
+//                        }
+//                    }
+//
+//                },
+
+                items: [
+//
+                ],
+                goods:[
+                    {name: "html",price:100},
+                    {name: "css",price:200},
+                    {name: "js",price:300},
+                ],
+                totalNumber: 0,
+                map:{
+//                    'html':1
+                }
+            },
+
+            computed:{
+
+                totalPrice: function () {
+                    var sum = 0;
+                    for (var i = 0; i < this.items.length; i++) {
+                        var self = this.items[i];
+                        sum = sum + self.num * parseInt(self.price);
+                    }
+                    return sum;
+                },
+                totalNumber:function(){
+                    var sum = 0;
+                    for (var i = 0; i < this.items.length; i++) {
+                        var self = this.items[i];
+                        sum = sum + self.num;
+                    }
+                    return sum;
+                }
+            },
+
+            methods:{
+                updateNum: function (item,num) {
+
+                    var num = item.num+num;
+                    if(num<1){
+                        var index =this.map[item.name]
+                        this.items.splice(index,1);
+                        delete this.map[item.name]
+
+                    }else{
+                        item.num=num;
+                    }
+                },
+
+//              添加/购买按钮
+                addItem: function (item) {
+
+                    if(this.map.hasOwnProperty(item.name)){
+                        this.items[this.map[item.name]].num+=1;
+                    }else{
+                        var index =this.items.push({ name: item.name, price: item.price, num: 1})
+                        this.map[item.name]= index -1;
+
+                    }
+                }
+
+            }
+
+        })
+
+    }
+
+</script>
+
+
+</body>
+</html>

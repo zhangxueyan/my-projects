@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <title>t32点击按钮缓慢向下移动</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <script src="http://libs.baidu.com/jquery/1.10.2/jquery.min.js"></script>
+    <style>
+        *{
+            margin:0;
+            padding:0;
+        }
+        body{
+            height:3000px;
+            margin:0px;
+            padding:0px;
+        }
+        button{
+            display: block;
+            margin:0 auto;
+            line-height:50px;
+        }
+        p{
+            position: absolute;
+            width:100%;
+            left:0px;
+            top:800px;
+            color: #fff;
+            line-height:60px;
+            background:green;
+            text-align: center;
+            color:22px;
+        }
+    </style>
+</head>
+<body>
+
+<button>点击缓慢向下移动800像素</button>
+<p>这里是文档800像素的位置</p>
+
+<script>
+    $("button").click(function(){
+        $("body").animate({
+            'scrollTop' : "+=800px"
+        }, 2000);
+    });
+
+</script>
+
+</body>
+</html>

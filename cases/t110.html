@@ -1,0 +1,49 @@
+<!DOCTYPE>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no"/>
+    <title>t110点击元素显示其内容</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            font-family: "微软雅黑", Arial;
+            font-size: 22px;
+        }
+
+        div {
+            width: 500px;
+            margin: 50px auto;
+            line-height: 60px;
+            cursor: pointer;
+            text-align: center;
+            border: 2px solid #333;
+        }
+        p{
+            width:500px;
+            margin: 0px auto;
+            text-align: center;
+        }
+    </style>
+
+</head>
+<body>
+<div id="dv1"><span>这里是文章的<b style="color:red">正文部分</b>这里是文章的正文部分这里是文章的正文部分这里是文章的正文部分</span></div>
+<div id="dv2"><span>这里是文章的<b style="color:red">正文部分</b>这里是文章的正文部分这里是文章的正文部分这里是文章的正文部分</span></div>
+<p>注意：点击两个div分别不同的内容</p>
+<script>
+    var dv1 = document.getElementById("dv1");
+    var dv2 = document.getElementById("dv2");
+    dv1.onclick = function () {
+        alert(this.innerText);
+    }
+
+    dv2.onclick = function () {
+        alert(this.innerHTML);
+    }
+</script>
+</body>
+</html>
+

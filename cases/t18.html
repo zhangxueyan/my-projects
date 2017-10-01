@@ -1,0 +1,76 @@
+<!DOCTYPE>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no"/>
+    <title>t18改变和重置样式</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            font-family: "微软雅黑", Arial;
+            font-size: 14px;
+        }
+
+        .clearfix {
+            clear: both;
+        }
+
+        .main {
+            width: 500px;
+            margin: 50px auto;
+        }
+
+        .main > li {
+            width: 100px;
+            height: 100px;
+            background: green;
+            float: left;
+            margin-right: 10px;
+        }
+
+        button {
+            padding: 3px;
+            margin-right: 10px;
+        }
+
+        #btn1 {
+            margin-left: 800px;
+        }
+    </style>
+
+</head>
+<body>
+<ul class="main">
+    <li></li>
+    <li></li>
+    <li></li>
+    <div class="clearfix"></div>
+</ul>
+<button id="btn1">点击变色</button>
+<button id="btn2">点击重置</button>
+<script>
+    window.onload = function () {
+        var btn1 = document.getElementById("btn1");
+        var btn2 = document.getElementById("btn2");
+        var li = document.getElementsByTagName("li");
+        btn1.onclick = function () {
+            for (i = 0; i < li.length; i++) {
+                li[i].style.background = "blue";
+            }
+
+        }
+        btn2.onclick = function () {
+            for (i = 0; i < li.length; i++) {
+                li[i].style.background = "";
+            }
+
+        }
+
+    }
+
+</script>
+</body>
+</html>
+

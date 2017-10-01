@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>t11清除字符串中的空格</title>
+    <style>
+        .main{
+            width:960px;
+            margin: 0 auto;
+            padding-top:200px;
+        }
+        .content{
+            width:300px;
+            margin-left:330px;
+        }
+        input,button{
+            margin-bottom: 5px;
+            line-height: 30px;
+
+        }
+    </style>
+</head>
+<body>
+<div class="main">
+    <div class="content">
+        <input id="input" type="text" value="         [过滤  空格]       ">
+        <button id="btn" type="button">去除所有的空格</button>
+
+    </div>
+</div>
+
+</body>
+<script>
+    window.onload = function(){
+        var input = document.getElementById("input");
+        var btn = document.getElementById("btn");
+        btn.onclick = function(){
+            input.value = input.value.replace(/\s+/g,"");
+        }
+    }
+
+//    去除两头空格:str   =   str.replace(/^\s+|\s+$/g,"");
+//    去除左空格：str=str.replace( /^\s*/, '');
+//    去除右空格：str=str.replace(/(\s*$)/g, "");
+</script>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <title>t33添加锚点实现本页跳转效果</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <script src="http://libs.baidu.com/jquery/1.10.2/jquery.min.js"></script>
+
+    <style>
+        body {
+            height: 3000px;
+            margin: 0px;
+            padding: 0px;
+        }
+        a{
+            text-decoration: none;
+            color:#333;
+            font-size:22px;
+        }
+        button{
+            margin-left:300px;
+            margin-top:400px;
+        }
+        #start{
+            position: absolute;
+            left:500px;
+            top:0px;
+            color:red;
+            font-weight:bold;
+        }
+        #end{
+            position: absolute;
+            left:500px;
+            top:800px;
+            color:green;
+            font-weight:bold;
+        }
+
+
+    </style>
+
+</head>
+<body>
+
+<button onclick="cc()">点击开始跳转</button>
+
+<a id="start" href="#end">点击按钮起始位置</a>
+
+<a id="end">跳转到此结束位置</a>
+
+<script type="text/javascript">
+    function cc() {
+        document.getElementById("start").click(5000);
+    }
+    //理念就是点击按钮触发一个a的跳转事件
+</script>
+
+</body>
+</html>

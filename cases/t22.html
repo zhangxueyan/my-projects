@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>t22商品分类展示</title>
+    <script src="http://cdn.static.runoob.com/libs/jquery/1.10.2/jquery.min.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            font-family: "微软雅黑", arial;
+            font-size: 14px;
+        }
+
+        .clearfix {
+            clear: both;
+        }
+
+        a {
+            text-decoration: none;
+            color: #333;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        .main {
+            width: 100%;
+            padding-top: 200px;
+        }
+
+        .content {
+            width: 960px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        nav {
+            height: 40px;
+            background: #d22636;
+        }
+
+        .menu {
+            width: 240px;
+            line-height: 40px;
+            border: 1px solid red;
+            position: absolute;
+            left: 0;
+            top: -40px;
+
+        }
+
+        .menu > dt {
+            color: #fff;
+            background: #c2202f;
+            padding-left: 20px;
+        }
+
+        .menu > dd {
+            padding-left: 40px;
+            cursor: pointer;
+        }
+
+        .menu > dd>.submenu {
+            position: absolute;
+            left: 240px;
+            top: 40px;
+            border: 1px solid burlywood;
+            width: 640px;
+            padding: 20px 30px;
+        }
+
+        .submenu > ul {
+            border-bottom: 1px solid #ccc;
+            padding-bottom: 20px;
+        }
+
+        .submenu > ul > li {
+            float: left;
+            margin-right: 20px;
+        }
+
+        .submenu > ul > li:last-child {
+            margin-right: 0;
+        }
+
+        .submenu > ul > li:first-child > a {
+            color: red;
+        }
+
+    </style>
+</head>
+<body>
+<div class="main">
+    <nav></nav>
+    <div class="content">
+        <dl class="menu">
+            <dt>全部商品分类</dt>
+
+            <dd>
+                衣服鞋帽
+                <div class="submenu">
+
+                    <ul>
+                        <li><a href="#">休闲食品</a></li>
+                        <li>
+                            <a href="#">休闲食品</a><span>&nbsp;&nbsp;|&nbsp;&nbsp;</span>
+                            <a href="#">休闲食品</a><span>&nbsp;&nbsp;|&nbsp;&nbsp;</span>
+                            <a href="#">休闲食品</a><span>&nbsp;&nbsp;|&nbsp;&nbsp;</span>
+                            <a href="#">休闲食品</a><span>&nbsp;&nbsp;|&nbsp;&nbsp;</span>
+                            <a href="#">休闲食品</a><span>&nbsp;&nbsp;|&nbsp;&nbsp;</span>
+                            <a href="#">休闲食品</a><span>&nbsp;&nbsp;|&nbsp;&nbsp;</span>
+                            <a href="#">休闲食品</a><br>
+                            <a href="#">休闲食品</a><span>&nbsp;&nbsp;|&nbsp;&nbsp;</span>
+                            <a href="#">休闲食品</a><span>&nbsp;&nbsp;|&nbsp;&nbsp;</span>
+                            <a href="#">休闲食品</a><span>&nbsp;&nbsp;|&nbsp;&nbsp;</span>
+                            <a href="#">休闲食品</a><span>&nbsp;&nbsp;|&nbsp;&nbsp;</span>
+                            <a href="#">休闲食品</a><span>&nbsp;&nbsp;|&nbsp;&nbsp;</span>
+                            <a href="#">休闲食品</a>
+                        </li>
+                        <div class="clearfix"></div>
+                    </ul>
+
+                    <ul>
+                        <li><a href="#">休闲食品</a></li>
+                        <li>
+                            <a href="#">休闲食品</a><span>&nbsp;&nbsp;|&nbsp;&nbsp;</span>
+                            <a href="#">休闲食品</a><span>&nbsp;&nbsp;|&nbsp;&nbsp;</span>
+                            <a href="#">休闲食品</a><span>&nbsp;&nbsp;|&nbsp;&nbsp;</span>
+                            <a href="#">休闲食品</a><span>&nbsp;&nbsp;|&nbsp;&nbsp;</span>
+                            <a href="#">休闲食品</a><span>&nbsp;&nbsp;|&nbsp;&nbsp;</span>
+                            <a href="#">休闲食品</a><span>&nbsp;&nbsp;|&nbsp;&nbsp;</span>
+                            <a href="#">休闲食品</a><br>
+                            <a href="#">休闲食品</a><span>&nbsp;&nbsp;|&nbsp;&nbsp;</span>
+                            <a href="#">休闲食品</a><span>&nbsp;&nbsp;|&nbsp;&nbsp;</span>
+                            <a href="#">休闲食品</a><span>&nbsp;&nbsp;|&nbsp;&nbsp;</span>
+                            <a href="#">休闲食品</a><span>&nbsp;&nbsp;|&nbsp;&nbsp;</span>
+                            <a href="#">休闲食品</a><span>&nbsp;&nbsp;|&nbsp;&nbsp;</span>
+                            <a href="#">休闲食品</a>
+                        </li>
+                        <div class="clearfix"></div>
+                    </ul>
+
+                    <ul>
+                        <li><a href="#">休闲食品</a></li>
+                        <li>
+                            <a href="#">休闲食品</a><span>&nbsp;&nbsp;|&nbsp;&nbsp;</span>
+                            <a href="#">休闲食品</a><span>&nbsp;&nbsp;|&nbsp;&nbsp;</span>
+                            <a href="#">休闲食品</a><span>&nbsp;&nbsp;|&nbsp;&nbsp;</span>
+                            <a href="#">休闲食品</a><span>&nbsp;&nbsp;|&nbsp;&nbsp;</span>
+                            <a href="#">休闲食品</a><span>&nbsp;&nbsp;|&nbsp;&nbsp;</span>
+                            <a href="#">休闲食品</a><span>&nbsp;&nbsp;|&nbsp;&nbsp;</span>
+                            <a href="#">休闲食品</a><br>
+                            <a href="#">休闲食品</a><span>&nbsp;&nbsp;|&nbsp;&nbsp;</span>
+                            <a href="#">休闲食品</a><span>&nbsp;&nbsp;|&nbsp;&nbsp;</span>
+                            <a href="#">休闲食品</a><span>&nbsp;&nbsp;|&nbsp;&nbsp;</span>
+                            <a href="#">休闲食品</a><span>&nbsp;&nbsp;|&nbsp;&nbsp;</span>
+                            <a href="#">休闲食品</a><span>&nbsp;&nbsp;|&nbsp;&nbsp;</span>
+                            <a href="#">休闲食品</a>
+                        </li>
+                        <div class="clearfix"></div>
+                    </ul>
+
+
+                </div>
+            </dd>
+            <dd>
+                图书音像
+                <div class="submenu">
+
+                    <ul>
+                        <li><a href="#">图书音像</a></li>
+                        <li>
+                            <a href="#">图书音像</a><span>&nbsp;&nbsp;|&nbsp;&nbsp;</span>
+                            <a href="#">休闲食品</a><span>&nbsp;&nbsp;|&nbsp;&nbsp;</span>
+                            <a href="#">休闲食品</a><span>&nbsp;&nbsp;|&nbsp;&nbsp;</span>
+                            <a href="#">休闲食品</a><span>&nbsp;&nbsp;|&nbsp;&nbsp;</span>
+                            <a href="#">休闲食品</a><span>&nbsp;&nbsp;|&nbsp;&nbsp;</span>
+                            <a href="#">休闲食品</a><span>&nbsp;&nbsp;|&nbsp;&nbsp;</span>
+                            <a href="#">休闲食品</a><br>
+                            <a href="#">休闲食品</a><span>&nbsp;&nbsp;|&nbsp;&nbsp;</span>
+                            <a href="#">休闲食品</a><span>&nbsp;&nbsp;|&nbsp;&nbsp;</span>
+                            <a href="#">休闲食品</a><span>&nbsp;&nbsp;|&nbsp;&nbsp;</span>
+                            <a href="#">休闲食品</a><span>&nbsp;&nbsp;|&nbsp;&nbsp;</span>
+                            <a href="#">休闲食品</a><span>&nbsp;&nbsp;|&nbsp;&nbsp;</span>
+                            <a href="#">休闲食品</a>
+                        </li>
+                        <div class="clearfix"></div>
+                    </ul>
+
+                    <ul>
+                        <li><a href="#">休闲食品</a></li>
+                        <li>
+                            <a href="#">休闲食品</a><span>&nbsp;&nbsp;|&nbsp;&nbsp;</span>
+                            <a href="#">休闲食品</a><span>&nbsp;&nbsp;|&nbsp;&nbsp;</span>
+                            <a href="#">休闲食品</a><span>&nbsp;&nbsp;|&nbsp;&nbsp;</span>
+                            <a href="#">休闲食品</a><span>&nbsp;&nbsp;|&nbsp;&nbsp;</span>
+                            <a href="#">休闲食品</a><span>&nbsp;&nbsp;|&nbsp;&nbsp;</span>
+                            <a href="#">休闲食品</a><span>&nbsp;&nbsp;|&nbsp;&nbsp;</span>
+                            <a href="#">休闲食品</a><br>
+                            <a href="#">休闲食品</a><span>&nbsp;&nbsp;|&nbsp;&nbsp;</span>
+                            <a href="#">休闲食品</a><span>&nbsp;&nbsp;|&nbsp;&nbsp;</span>
+                            <a href="#">休闲食品</a><span>&nbsp;&nbsp;|&nbsp;&nbsp;</span>
+                            <a href="#">休闲食品</a><span>&nbsp;&nbsp;|&nbsp;&nbsp;</span>
+                            <a href="#">休闲食品</a><span>&nbsp;&nbsp;|&nbsp;&nbsp;</span>
+                            <a href="#">休闲食品</a>
+                        </li>
+                        <div class="clearfix"></div>
+                    </ul>
+
+                    <ul>
+                        <li><a href="#">休闲食品</a></li>
+                        <li>
+                            <a href="#">休闲食品</a><span>&nbsp;&nbsp;|&nbsp;&nbsp;</span>
+                            <a href="#">休闲食品</a><span>&nbsp;&nbsp;|&nbsp;&nbsp;</span>
+                            <a href="#">休闲食品</a><span>&nbsp;&nbsp;|&nbsp;&nbsp;</span>
+                            <a href="#">休闲食品</a><span>&nbsp;&nbsp;|&nbsp;&nbsp;</span>
+                            <a href="#">休闲食品</a><span>&nbsp;&nbsp;|&nbsp;&nbsp;</span>
+                            <a href="#">休闲食品</a><span>&nbsp;&nbsp;|&nbsp;&nbsp;</span>
+                            <a href="#">休闲食品</a><br>
+                            <a href="#">休闲食品</a><span>&nbsp;&nbsp;|&nbsp;&nbsp;</span>
+                            <a href="#">休闲食品</a><span>&nbsp;&nbsp;|&nbsp;&nbsp;</span>
+                            <a href="#">休闲食品</a><span>&nbsp;&nbsp;|&nbsp;&nbsp;</span>
+                            <a href="#">休闲食品</a><span>&nbsp;&nbsp;|&nbsp;&nbsp;</span>
+                            <a href="#">休闲食品</a><span>&nbsp;&nbsp;|&nbsp;&nbsp;</span>
+                            <a href="#">休闲食品</a>
+                        </li>
+                        <div class="clearfix"></div>
+                    </ul>
+
+
+                </div>
+            </dd>
+            <dd>
+                电子设备
+                <div class="submenu">
+
+                    <ul>
+                        <li><a href="#">电子设备</a></li>
+                        <li>
+                            <a href="#">休闲食品</a><span>&nbsp;&nbsp;|&nbsp;&nbsp;</span>
+                            <a href="#">休闲食品</a><span>&nbsp;&nbsp;|&nbsp;&nbsp;</span>
+                            <a href="#">休闲食品</a><span>&nbsp;&nbsp;|&nbsp;&nbsp;</span>
+                            <a href="#">休闲食品</a><span>&nbsp;&nbsp;|&nbsp;&nbsp;</span>
+                            <a href="#">休闲食品</a><span>&nbsp;&nbsp;|&nbsp;&nbsp;</span>
+                            <a href="#">休闲食品</a><span>&nbsp;&nbsp;|&nbsp;&nbsp;</span>
+                            <a href="#">休闲食品</a><br>
+                            <a href="#">休闲食品</a><span>&nbsp;&nbsp;|&nbsp;&nbsp;</span>
+                            <a href="#">休闲食品</a><span>&nbsp;&nbsp;|&nbsp;&nbsp;</span>
+                            <a href="#">休闲食品</a><span>&nbsp;&nbsp;|&nbsp;&nbsp;</span>
+                            <a href="#">休闲食品</a><span>&nbsp;&nbsp;|&nbsp;&nbsp;</span>
+                            <a href="#">休闲食品</a><span>&nbsp;&nbsp;|&nbsp;&nbsp;</span>
+                            <a href="#">休闲食品</a>
+                        </li>
+                        <div class="clearfix"></div>
+                    </ul>
+
+                    <ul>
+                        <li><a href="#">休闲食品</a></li>
+                        <li>
+                            <a href="#">休闲食品</a><span>&nbsp;&nbsp;|&nbsp;&nbsp;</span>
+                            <a href="#">休闲食品</a><span>&nbsp;&nbsp;|&nbsp;&nbsp;</span>
+                            <a href="#">休闲食品</a><span>&nbsp;&nbsp;|&nbsp;&nbsp;</span>
+                            <a href="#">休闲食品</a><span>&nbsp;&nbsp;|&nbsp;&nbsp;</span>
+                            <a href="#">休闲食品</a><span>&nbsp;&nbsp;|&nbsp;&nbsp;</span>
+                            <a href="#">休闲食品</a><span>&nbsp;&nbsp;|&nbsp;&nbsp;</span>
+                            <a href="#">休闲食品</a><br>
+                            <a href="#">休闲食品</a><span>&nbsp;&nbsp;|&nbsp;&nbsp;</span>
+                            <a href="#">休闲食品</a><span>&nbsp;&nbsp;|&nbsp;&nbsp;</span>
+                            <a href="#">休闲食品</a><span>&nbsp;&nbsp;|&nbsp;&nbsp;</span>
+                            <a href="#">休闲食品</a><span>&nbsp;&nbsp;|&nbsp;&nbsp;</span>
+                            <a href="#">休闲食品</a><span>&nbsp;&nbsp;|&nbsp;&nbsp;</span>
+                            <a href="#">休闲食品</a>
+                        </li>
+                        <div class="clearfix"></div>
+                    </ul>
+
+                    <ul>
+                        <li><a href="#">休闲食品</a></li>
+                        <li>
+                            <a href="#">休闲食品</a><span>&nbsp;&nbsp;|&nbsp;&nbsp;</span>
+                            <a href="#">休闲食品</a><span>&nbsp;&nbsp;|&nbsp;&nbsp;</span>
+                            <a href="#">休闲食品</a><span>&nbsp;&nbsp;|&nbsp;&nbsp;</span>
+                            <a href="#">休闲食品</a><span>&nbsp;&nbsp;|&nbsp;&nbsp;</span>
+                            <a href="#">休闲食品</a><span>&nbsp;&nbsp;|&nbsp;&nbsp;</span>
+                            <a href="#">休闲食品</a><span>&nbsp;&nbsp;|&nbsp;&nbsp;</span>
+                            <a href="#">休闲食品</a><br>
+                            <a href="#">休闲食品</a><span>&nbsp;&nbsp;|&nbsp;&nbsp;</span>
+                            <a href="#">休闲食品</a><span>&nbsp;&nbsp;|&nbsp;&nbsp;</span>
+                            <a href="#">休闲食品</a><span>&nbsp;&nbsp;|&nbsp;&nbsp;</span>
+                            <a href="#">休闲食品</a><span>&nbsp;&nbsp;|&nbsp;&nbsp;</span>
+                            <a href="#">休闲食品</a><span>&nbsp;&nbsp;|&nbsp;&nbsp;</span>
+                            <a href="#">休闲食品</a>
+                        </li>
+                        <div class="clearfix"></div>
+                    </ul>
+
+
+                </div>
+            </dd>
+            <dd>
+                家居建材
+                <div class="submenu">
+
+                    <ul>
+                        <li><a href="#">家居建材</a></li>
+                        <li>
+                            <a href="#">休闲食品</a><span>&nbsp;&nbsp;|&nbsp;&nbsp;</span>
+                            <a href="#">休闲食品</a><span>&nbsp;&nbsp;|&nbsp;&nbsp;</span>
+                            <a href="#">休闲食品</a><span>&nbsp;&nbsp;|&nbsp;&nbsp;</span>
+                            <a href="#">休闲食品</a><span>&nbsp;&nbsp;|&nbsp;&nbsp;</span>
+                            <a href="#">休闲食品</a><span>&nbsp;&nbsp;|&nbsp;&nbsp;</span>
+                            <a href="#">休闲食品</a><span>&nbsp;&nbsp;|&nbsp;&nbsp;</span>
+                            <a href="#">休闲食品</a><br>
+                            <a href="#">休闲食品</a><span>&nbsp;&nbsp;|&nbsp;&nbsp;</span>
+                            <a href="#">休闲食品</a><span>&nbsp;&nbsp;|&nbsp;&nbsp;</span>
+                            <a href="#">休闲食品</a><span>&nbsp;&nbsp;|&nbsp;&nbsp;</span>
+                            <a href="#">休闲食品</a><span>&nbsp;&nbsp;|&nbsp;&nbsp;</span>
+                            <a href="#">休闲食品</a><span>&nbsp;&nbsp;|&nbsp;&nbsp;</span>
+                            <a href="#">休闲食品</a>
+                        </li>
+                        <div class="clearfix"></div>
+                    </ul>
+
+                    <ul>
+                        <li><a href="#">休闲食品</a></li>
+                        <li>
+                            <a href="#">休闲食品</a><span>&nbsp;&nbsp;|&nbsp;&nbsp;</span>
+                            <a href="#">休闲食品</a><span>&nbsp;&nbsp;|&nbsp;&nbsp;</span>
+                            <a href="#">休闲食品</a><span>&nbsp;&nbsp;|&nbsp;&nbsp;</span>
+                            <a href="#">休闲食品</a><span>&nbsp;&nbsp;|&nbsp;&nbsp;</span>
+                            <a href="#">休闲食品</a><span>&nbsp;&nbsp;|&nbsp;&nbsp;</span>
+                            <a href="#">休闲食品</a><span>&nbsp;&nbsp;|&nbsp;&nbsp;</span>
+                            <a href="#">休闲食品</a><br>
+                            <a href="#">休闲食品</a><span>&nbsp;&nbsp;|&nbsp;&nbsp;</span>
+                            <a href="#">休闲食品</a><span>&nbsp;&nbsp;|&nbsp;&nbsp;</span>
+                            <a href="#">休闲食品</a><span>&nbsp;&nbsp;|&nbsp;&nbsp;</span>
+                            <a href="#">休闲食品</a><span>&nbsp;&nbsp;|&nbsp;&nbsp;</span>
+                            <a href="#">休闲食品</a><span>&nbsp;&nbsp;|&nbsp;&nbsp;</span>
+                            <a href="#">休闲食品</a>
+                        </li>
+                        <div class="clearfix"></div>
+                    </ul>
+
+                    <ul>
+                        <li><a href="#">休闲食品</a></li>
+                        <li>
+                            <a href="#">休闲食品</a><span>&nbsp;&nbsp;|&nbsp;&nbsp;</span>
+                            <a href="#">休闲食品</a><span>&nbsp;&nbsp;|&nbsp;&nbsp;</span>
+                            <a href="#">休闲食品</a><span>&nbsp;&nbsp;|&nbsp;&nbsp;</span>
+                            <a href="#">休闲食品</a><span>&nbsp;&nbsp;|&nbsp;&nbsp;</span>
+                            <a href="#">休闲食品</a><span>&nbsp;&nbsp;|&nbsp;&nbsp;</span>
+                            <a href="#">休闲食品</a><span>&nbsp;&nbsp;|&nbsp;&nbsp;</span>
+                            <a href="#">休闲食品</a><br>
+                            <a href="#">休闲食品</a><span>&nbsp;&nbsp;|&nbsp;&nbsp;</span>
+                            <a href="#">休闲食品</a><span>&nbsp;&nbsp;|&nbsp;&nbsp;</span>
+                            <a href="#">休闲食品</a><span>&nbsp;&nbsp;|&nbsp;&nbsp;</span>
+                            <a href="#">休闲食品</a><span>&nbsp;&nbsp;|&nbsp;&nbsp;</span>
+                            <a href="#">休闲食品</a><span>&nbsp;&nbsp;|&nbsp;&nbsp;</span>
+                            <a href="#">休闲食品</a>
+                        </li>
+                        <div class="clearfix"></div>
+                    </ul>
+
+
+                </div>
+            </dd>
+
+        </dl>
+    </div>
+</div>
+<script>
+    $(".submenu").hide();
+    $(".menu dd").hover(function(){
+        $(this).find(".submenu").toggle();
+    })
+
+</script>
+</body>
+</html>

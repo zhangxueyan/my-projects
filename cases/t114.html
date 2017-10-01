@@ -1,0 +1,90 @@
+<!DOCTYPE>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no"/>
+    <title>t114简易选项卡效果</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            font-family: "微软雅黑", Arial;
+            font-size: 16px;
+        }
+
+        .clearfix {
+            clear: both;
+        }
+
+        .wrap {
+            width: 453px;
+            border: 1px solid green;
+            margin: 50px auto;
+        }
+
+        #main > li {
+            float: left;
+            line-height: 40px;
+            width: 150px;
+            background-color: green;
+            text-align: center;
+            border-right: 1px solid red;
+            cursor: pointer;
+        }
+        #content {
+            border: 1px solid blue;
+            height:300px;
+            padding:30px 0;
+        }
+        #content > li{
+            display: none;
+            line-height:28px;
+        }
+
+        #content > li:first-child{
+            display: block;
+        }
+        #main>li.current{
+            background:#cccccc;
+        }
+
+
+    </style>
+
+</head>
+<body>
+<div class="wrap">
+    <ul id="main">
+        <li class="current">第一项</li>
+        <li>第二项</li>
+        <li>第三项</li>
+        <div class="clearfix"></div>
+    </ul>
+
+    <ul id="content">
+        <li>1、网页特效原理分析网页特效原理分析网页特效原理分析网页特效原理分析网页特效原理分析</li>
+        <li>2、响应用户操作响应用户操作响应用户操作响应用户操作响应用户操作响应用户操作响应用户操作</li>
+        <li>3、元素属性操作元素属性操作元素属性操作元素属性操作元素属性操作元素属性操作元素属性操作</li>
+    </ul>
+</div>
+<script>
+    window.onload = function () {
+        var mLi = document.getElementById("main").getElementsByTagName("li");
+        var cLi = document.getElementById("content").getElementsByTagName("li");
+        for (var i = 0; i < mLi.length; i++) {
+            mLi[i].index = i;
+            mLi[i].onmouseenter = function () {
+                for (var n = 0; n < mLi.length; n++) mLi[n].className = "";//检测选显卡是否在当前状态类有没有
+                this.className = "current";
+                for (var n = 0; n < cLi.length; n++) cLi[n].style.display = "none";//检测当前tab页是否显示
+                cLi[this.index].style.display = "block"
+            }
+        }
+
+    }
+</script>
+
+</body>
+</html>
+

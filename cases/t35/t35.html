@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <title>t34渐变效果实现</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <script src="http://libs.baidu.com/jquery/1.10.2/jquery.min.js"></script>
+
+    <style>
+        *{
+            margin:0;
+            padding:0 ;
+            list-style: none;
+            font-family:"微软雅黑",arial;
+            font-size:22px;
+        }
+        a{
+            text-decoration: none;
+        }
+        .clearfix {
+            clear: both;
+        }
+        .main{
+            width:1040px;
+            margin:0 auto;
+        }
+        .main>li{
+            float: left;
+            position: relative;
+            overflow: hidden;
+            margin-right:10px;
+        }
+        .main>li:nth-last-child(2){
+            margin-right:0px;
+        }
+        .main>li>p{
+            position: absolute;
+            width:100%;
+            left:0;
+            top:360px;
+            line-height:50px;
+            color:#fff;
+            background-color:rgba(0,0,0,0.6);
+            text-align:center;
+        }
+        .main>li img{
+            display: block;
+            transition:all 3s;
+        }
+        .item1 img:hover{
+            -webkit-transform:scale(2,2);
+            -ms-transform:scale(2,2); /* IE 9 */
+            -webkit-transform: scale(2,2); /* Safari */
+            transform: scale(2,2); /* 标准语法 */
+        }
+        .item2 img:hover{
+            -webkit-transform:rotate(120deg);
+            -ms-transform:rotate(120deg); /* IE 9 */
+            -webkit-transform: rotate(120deg); /* Safari */
+            transform: rotate(120deg); /* 标准语法 */
+        }
+
+        .item3 img:hover{
+            -webkit-transform:translate(100px,0px);
+            -ms-transform:translate(100px,0px);/* IE 9 */
+            -webkit-transform: translate(100px,0px); /* Safari */
+            transform: translate(100px,0px); /* 标准语法 */
+        }
+    </style>
+
+</head>
+<body>
+<ul class="main">
+    <li class="item1">
+        <img src="images/picture1.jpg">
+        <p>鼠标经过缩放效果</p>
+    </li>
+    <li class="item2">
+        <img src="images/picture1.jpg">
+        <p>鼠标经过旋转效果</p>
+    </li>
+    <li class="item3">
+        <img src="images/picture1.jpg">
+        <p>鼠标经过移动效果</p>
+    </li>
+    <div class="clearfix"></div>
+</ul>
+
+</body>
+</html>

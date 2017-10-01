@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<!-- saved from url=(0048)http://v3.bootcss.com/examples/navbar-fixed-top/ -->
+<html lang="zh-CN">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="http://v3.bootcss.com/favicon.ico">
+
+    <title>首页</title>
+
+    <!-- common CSS -->
+    <link href="css/common.css" rel="stylesheet">
+    <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="css/navbar-fixed-top.css" rel="stylesheet">
+
+    <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
+    <!--[if lt IE 9]>
+    <script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+    <script src="js/ie-emulation-modes-warning.js"></script>
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="//cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script src="//cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+
+    <style>
+        .navbar-nav {
+            float: right;
+        }
+
+        .page-header h3, .page-header p {
+            text-align: center;
+        }
+
+        .row img {
+            width: 100%;
+            display: block;
+        }
+
+        .row p {
+            text-align: center;
+        }
+
+        .more {
+            width: 110px;
+            margin: 0 auto;
+        }
+
+        .more a {
+            color: #666;;
+        }
+
+        .more:hover a {
+            text-decoration: none;
+        }
+
+        .row .thumbnail {
+            border: none;
+        }
+
+        .row {
+            margin-bottom: 20px;
+        }
+
+        .about p {
+            margin-bottom: 30px;
+        }
+
+        .about img {
+            width: 100%;
+            display: block;
+        }
+
+        .about p {
+            line-height: 180%;
+            margin-top: 20px;
+        }
+
+        .media > h3 {
+            margin-bottom: 30px;
+        }
+
+        .media-left {
+            padding-right: 15px;
+        }
+
+        .media-body p {
+            font-size: 14px;
+            line-height: 24px;
+        }
+    </style>
+
+
+</head>
+
+<body>
+
+<!-- Fixed navbar -->
+<nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="javascript:void(0)">国浩律师事务所</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+                <li class="active"><a href="index.html">首页</a></li>
+                <li><a href="about.html">关于我们</a></li>
+                <li><a href="service.html">服务领域</a></li>
+                <li><a href="team.html">专业团队</a></li>
+                <li class="dropdown">
+                    <a href="contact.html" class="dropdown-toggle" data-toggle="dropdown" role="button"
+                       aria-haspopup="true" aria-expanded="false">联系我们<span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="contact.html">联系方式</a></li>
+                        <li><a href="contact.html">人才招聘</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <!--/.nav-collapse -->
+    </div>
+</nav>
+<!-- Fixed navbar -->
+
+
+<!-- 轮播banner图start -->
+<div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+    <!-- Indicators -->
+    <ol class="carousel-indicators">
+        <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+        <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+        <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+    </ol>
+    <!-- Wrapper for slides -->
+
+
+    <!-- ***********************大屏幕显示的banner图******************************************** -->
+    <div class="carousel-inner" role="listbox">
+        <div class="item active">
+            <img src="images/bb04.jpg" alt=".." class=" visible-lg-block visible-md-block">
+            <img src="images/bb06.jpg" alt=".." class=" visible-xs-block visible-sm-block">
+
+            <div class="carousel-caption">
+            </div>
+        </div>
+
+        <div class="item">
+            <img src="images/bb05.jpg" alt=".." class=" visible-lg-block visible-md-block">
+            <img src="images/bb07.jpg" alt=".." class=" visible-xs-block visible-sm-block">
+
+            <div class="carousel-caption">
+            </div>
+        </div>
+
+        <div class="item">
+            <img src="images/bb01.jpg" alt=".." class=" visible-lg-block visible-md-block">
+            <img src="images/bb08.jpg" alt=".." class=" visible-xs-block visible-sm-block">
+
+            <div class="carousel-caption">
+            </div>
+        </div>
+
+    </div>
+    <!-- ********大屏幕显示的banner图************** -->
+
+    <!-- Controls -->
+    <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+        <span class="sr-only">Previous</span>
+    </a>
+    <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+        <span class="sr-only">Next</span>
+    </a>
+    <!-- Controls -->
+</div>
+<!-- 轮播banner图 -->
+
+
+<div class="container">
+    <!-- *****服务领域*************************************************************************************-->
+    <div class="page-header">
+        <h3>服务领域</h3>
+
+        <p>精诚专业，为您尽可能争取最大的利益！</p>
+    </div>
+    <div class="row">
+        <div class="col-xs-12 col-sm-6 col-md-3">
+            <a href="#" class="thumbnail">
+                <img src="images/service01.jpg" alt="...">
+            </a>
+
+            <p>刑事辩护与代理</p>
+        </div>
+
+        <div class="col-xs-12 col-sm-6 col-md-3">
+            <a href="#" class="thumbnail">
+                <img src="images/service02.jpg" alt="...">
+            </a>
+
+            <p>民商事讼与仲裁</p>
+        </div>
+
+
+        <div class="col-xs-12 col-sm-6 col-md-3">
+            <a href="#" class="thumbnail">
+                <img src="images/service03.jpg" alt="...">
+            </a>
+
+            <p>行政诉讼</p>
+        </div>
+
+        <div class="col-xs-12 col-sm-6 col-md-3">
+            <a href="#" class="thumbnail">
+                <img src="images/service04.jpg" alt="...">
+            </a>
+
+            <p>涉外法律事务</p>
+        </div>
+
+    </div>
+    <!-- row结束 -->
+
+    <div class="more">
+        <button type="btn" class="btn btn-default"><a href="service.html">查看更多>></a></button>
+    </div>
+
+    <!-- *****关于我们*************************************************************************************-->
+    <div class="page-header">
+        <h3>关于我们</h3>
+
+        <p>精诚专业，为您尽可能争取最大的利益！</p>
+    </div>
+
+    <div class="about">
+        <img src="images/about.jpg" alt="...">
+
+        <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;国浩律师集团事务所成立于1998年6月，由北京市张涌涛律师事务所、上海市万国律师事务所、深圳市唐人律师事务所基于合并而共同发起设立，并在中华人民共和国司法部登记注册。前述三家事务所业已于1992年及1993年间组建，至今已有逾二十年的历史。2011年3月，国浩律师集团事务所更名为国浩律师事务所。国浩律师事务所是中国最大的跨地域合伙制律师事务所之一，在北京、上海、深圳、杭州、广州、昆明、天津、成都、宁波、福州、西安、南京、南宁、济南、重庆、苏州、长沙、香港、巴黎、马德里、硅谷等二十一地设有分支机构。国浩律师事务所现有260余名合伙人，90%以上的合伙人具有硕士、博士学位和高级职称，其中多名合伙人为我国某一法律领域及相关专业之著名专家和学者。国浩律师事务所拥有执业律师、律师助理、律师秘书及支持保障人员近2000人。</p>
+    </div>
+    <div class="more">
+        <button type="btn" class="btn btn-default"><a href="about.html">查看详情>></a></button>
+    </div>
+
+
+    <!-- *****专业团队*************************************************************************************-->
+    <div class="page-header">
+        <h3>专业团队</h3>
+
+        <p>精诚专业，为您尽可能争取最大的利益！</p>
+    </div>
+
+    <div class="row">
+        <div class="col-xs-12 col-sm-6 col-md-3">
+            <a href="#" class="thumbnail">
+                <img src="images/lawyer01.jpg" alt="...">
+            </a>
+
+            <p>安树军 律师</p>
+        </div>
+
+        <div class="col-xs-12 col-sm-6 col-md-3">
+            <a href="#" class="thumbnail">
+                <img src="images/lawyer02.jpg" alt="...">
+            </a>
+
+            <p>毕丽红 律师</p>
+        </div>
+
+
+        <div class="col-xs-12 col-sm-6 col-md-3">
+            <a href="#" class="thumbnail">
+                <img src="images/lawyer03.jpg" alt="...">
+            </a>
+
+            <p>蔡晖 律师</p>
+        </div>
+
+        <div class="col-xs-12 col-sm-6 col-md-3">
+            <a href="#" class="thumbnail">
+                <img src="images/lawyer04.jpg" alt="...">
+            </a>
+
+            <p>蔡世超 律师</p>
+        </div>
+
+    </div>
+    <!-- row结束 -->
+
+    <div class="more">
+        <button type="btn" class="btn btn-default"><a href="team.html">查看全部>></a></button>
+    </div>
+
+
+    <!-- *****新闻动态+合作信息*************************************************************************************-->
+
+    <div class="media col-xs-12 col-sm-6 col-md-6 " id="n1">
+
+        <div class="media">
+            <h3>新闻动态</h3>
+
+            <div class="media-left">
+                <a href="#">
+                    <img class="media-object" src="images/date01.jpg" alt="...">
+                </a>
+            </div>
+
+            <div class="media-body">
+                <h4 class="media-heading">参全国盛会，捧多项嘉奖</h4>
+
+                <p>3月30日，第九届全国律师代表大会在人民大会堂召开。中央政治局委员、中央政法委书记孟建柱，
+                    国务委员、中央政法委副书记、公安部部长郭声琨.....</p>
+            </div>
+        </div>
+        <!-- 以上是第一行的新闻动态 -->
+
+
+        <div class="media">
+            <div class="media-left">
+                <a href="#">
+                    <img class="media-object" src="images/date02.jpg" alt="...">
+                </a>
+            </div>
+
+            <div class="media-body">
+                <h4 class="media-heading">马耳他财政部部长-行访问国浩上海办公室</h4>
+
+                <p>3月16日下午，马耳他财政部长Edward Scicluna、证券交易所主席Joseph、Chetcuti Cauchi 律师事务所律师 Kenneth Camilleri 和Stefania
+                    Grech等前来国浩律师事务所上海办公室访问.....</p>
+            </div>
+        </div>
+        <!-- 以上是第二行的新闻动态 -->
+
+    </div>
+    <!-- 以上是左侧的新闻动态 -->
+
+
+    <div class="media col-xs-12 col-sm-6 col-md-6 " id="n2">
+
+        <div class="media">
+            <h3>合作信息</h3>
+
+            <div class="media-left">
+                <a href="#">
+                    <img class="media-object" src="images/date01.jpg" alt="...">
+                </a>
+            </div>
+
+            <div class="media-body">
+                <h4 class="media-heading">集团主席于宁一行参加中西律师合作论坛</h4>
+
+                <p>集团主席于宁、首席执行合伙人吕红兵、创始及执行合伙人李淳及合伙人孙国强、黄宁宁一行，
+                    参加了由国浩西班牙办公室和西班牙彭博律师事务所共同举办的中西律师合作论坛.....</p>
+            </div>
+        </div>
+        <!-- 以上是第一行的合作信息 -->
+
+        <div class="media">
+            <div class="media-left">
+                <a href="#">
+                    <img class="media-object" src="images/date02.jpg" alt="...">
+                </a>
+            </div>
+
+            <div class="media-body">
+                <h4 class="media-heading">香港著名律师胡汉清访问国浩上海办公室</h4>
+
+                <p>全国政协委员、香港著名大律师、香港基本法研究中心主席胡汉清及英国Smyth & Co律师事务所合伙人Jason
+                    Carmichael一行于2014年1月23日访问了国浩律师（上海）事务所.....</p>
+            </div>
+        </div>
+        <!-- 以上是第二行的合作信息 -->
+
+    </div>
+    <!-- 以上是右侧的合作信息 -->
+
+
+</div>
+<!-- container容器可视区域都要放在这里 -->
+
+
+<footer>
+    <div class="container">
+        <ul class="footer_left col-xs-12 col-sm-8 col-md-8 ">
+            <li><p>电话：+86 10 66216823</p></li>
+            <li><p>邮箱： grandallgroup@grandall.com.cn</p></li>
+            <li><p>地址：北京市西城区武定侯街2号泰康国际大厦10层1005单元</p></li>
+        </ul>
+
+        <ul class="footer_right col-xs-12 col-sm-4 col-md-2  col-md-offset-2">
+            <img src="images/code.jpg">
+
+            <p>关注微信公众号！</p>
+        </ul>
+    </div>
+</footer>
+
+
+<div class=" copyright col-xs-12">
+    <p>版权所有 Copyright©2009-2016 沪ICP备11021492号—1</p>
+</div>
+
+
+<!-- Bootstrap core JavaScript
+================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+<script src="js/jquery.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+<script src="js/ie10-viewport-bug-workaround.js"></script>
+
+</body>
+
+</html>

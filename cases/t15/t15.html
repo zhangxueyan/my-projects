@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>t15鼠标经过下拉遮罩</title>
+
+    <link rel="stylesheet" href="http://cdn.bootcss.com/bootstrap/3.3.0/css/bootstrap.min.css">
+    <script src="http://cdn.static.runoob.com/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script src="http://cdn.bootcss.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+
+    <style>
+        *{
+            margin:0;
+            padding: 0;
+            list-style: none;
+            font-family: "微软雅黑",arial;
+            font-size:14px;
+            color: #333;
+        }
+        dl,dd,p{
+            margin:0;
+            padding: 0;
+        }
+        a:hover{
+            text-decoration: none;
+        }
+        .t1 a{
+            color: #333;
+            font-size: 12px;
+        }
+        .t1 a:hover{
+            color: cadetblue;
+            text-decoration: none;
+        }
+
+
+        .main{
+            width:960px;
+            margin: 0 auto;
+            padding-top:200px;
+
+        }
+        #content>li{
+            border: 1px solid #dcdcdc;
+            padding:5px;
+            width:180px;
+            cursor:pointer;
+            float: left;
+            margin-left:70px;
+            position: relative;
+        }
+        #content li:first-child{
+            margin-left:0px;
+        }
+        .img img{
+            display: block;
+            margin-bottom:10px;
+        }
+        .text p{
+            line-height: 30px;
+        }
+        .text dd:nth-last-child(2){
+            height:45px;
+            width:45px;
+            background:url(11.jpg) no-repeat left;
+            margin-top:3px;
+            float: right;
+        }
+        .text dd{
+            float: left;
+        }
+
+        .clearfix{
+            clear: both;
+        }
+        .mask{
+            position: absolute;
+            height:100%;
+            width:100%;
+            background:rgba(0,0,0,0.6);
+            left:0;
+            top:0;
+            padding:5px;
+        }
+        .mask dt{
+            color: #fff;
+            font-size: 16px;
+            margin-top:15px;
+            width:140px;
+            margin-left:15px;
+        }
+        .mask dd{
+            color: #fff;
+            margin-top: 10px;
+            width:140px;
+            margin-left:15px;
+        }
+        .btns{
+            margin-top:80px;
+        }
+        .btns>li{
+            float: left;
+            line-height: 30px;
+            background:#fff;
+            width:80px;
+            margin-left:8px;
+            text-align: center;
+        }
+        .btns>li a{
+            color: #333;
+        }
+        .btns>li:first-child{
+            margin-left:0;
+            background:#ff7a01;
+        }
+        .btns>li:first-child a{
+            color: #fff;
+        }
+
+    </style>
+</head>
+<body>
+<div class="main">
+    <ul id="content">
+        <li class="item1">
+          <div class="img"><img src="1.jpg"></div>
+            <dl class="text">
+                <dd>
+                    <p>英雄联盟</p>
+                    <div class="t1">
+                        <a href="#">战争策略</a>
+                        <span>|</span>
+                        <a href="#">百度游戏</a>
+                    </div>
+                </dd>
+                <dd></dd>
+                <div class="clearfix"></div>
+            </dl>
+            <div class="mask">
+                <dt>英雄联盟</dt>
+                <dd>战争策略百度游戏略百度游等略百度游信息</dd>
+                <ul class="btns">
+                    <li><a href="#">开始游戏</a></li>
+                    <li><a href="#">更多平台</a></li>
+                    <div class="clearfix"></div>
+                </ul>
+            </div>
+        </li>
+
+
+
+        <li>
+            <div class="img"><img src="1.jpg"></div>
+            <dl class="text">
+                <dd>
+                    <p>英雄联盟</p>
+                    <div class="t1">
+                        <a href="#">战争策略</a>
+                        <span>|</span>
+                        <a href="#">百度游戏</a>
+                    </div>
+                </dd>
+                <dd></dd>
+                <div class="clearfix"></div>
+            </dl>
+            <div class="mask">
+                <dt>英雄联盟</dt>
+                <dd>战争策略百度游戏略百度游等略百度游信息</dd>
+                <ul class="btns">
+                    <li><a href="#">开始游戏</a></li>
+                    <li><a href="#">更多平台</a></li>
+                    <div class="clearfix"></div>
+                </ul>
+            </div>
+        </li>
+
+
+        <li>
+            <div class="img"><img src="1.jpg"></div>
+            <dl class="text">
+                <dd>
+                    <p>英雄联盟</p>
+                    <div class="t1">
+                        <a href="#">战争策略</a>
+                        <span>|</span>
+                        <a href="#">百度游戏</a>
+                    </div>
+                </dd>
+                <dd></dd>
+                <div class="clearfix"></div>
+            </dl>
+            <div class="mask">
+                <dt>英雄联盟</dt>
+                <dd>战争策略百度游戏略百度游等略百度游信息</dd>
+                <ul class="btns">
+                    <li><a href="#">开始游戏</a></li>
+                    <li><a href="#">更多平台</a></li>
+                    <div class="clearfix"></div>
+                </ul>
+            </div>
+        </li>
+
+
+        <li>
+            <div class="img"><img src="1.jpg"></div>
+            <dl class="text">
+                <dd>
+                    <p>英雄联盟</p>
+                    <div class="t1">
+                        <a href="#">战争策略</a>
+                        <span>|</span>
+                        <a href="#">百度游戏</a>
+                    </div>
+                </dd>
+                <dd></dd>
+                <div class="clearfix"></div>
+            </dl>
+            <div class="mask">
+                <dt>英雄联盟</dt>
+                <dd>战争策略百度游戏略百度游等略百度游信息</dd>
+                <ul class="btns">
+                    <li><a href="#">开始游戏</a></li>
+                    <li><a href="#">更多平台</a></li>
+                    <div class="clearfix"></div>
+                </ul>
+            </div>
+        </li>
+        
+        <div class="clearfix"></div>
+
+    </ul>
+
+</div>
+<script>
+    $(".mask").hide();
+    $("#content li").hover(function(){
+        $(this).find(".mask").slideToggle(200);
+    });
+</script>
+</body>
+</html>

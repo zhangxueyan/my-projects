@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <title>recharge</title>
+    <script src="http://cdn.static.runoob.com/libs/jquery/1.10.2/jquery.min.js"></script>
+    <style>
+        li {
+            list-style: none;
+            border: 1px solid red;
+            text-align: center;
+            float: left;
+            font-size:22px;
+            padding:5px 10px;
+
+        }
+        a{
+            text-decoration:none;
+            font-size:22px;
+            font-weight:bold;
+            color:#000000;
+        }
+
+        .clearfix {
+            clear: both;
+        }
+    </style>
+</head>
+
+<body>
+<ul>
+    <li><span id="p_item1">0</span></li>
+    <li><span id="p_item2">0</span></li>
+    <li><span id="p_item3">0</span></li>
+    <li><span id="p_item4">0</span></li>
+    <li><span id="p_item5">0</span></li>
+
+    <li><a href="javascript:;" id="p_add">+</a></li>
+    <li><a href="javascript:;" id="p_red">-</a></li>
+    <div class="clearfix"></div>
+</ul>
+<script>
+    var c = 0;//假设是那个数值
+
+    function setPoint(c) {
+        console.log("set c=", c)
+        var sc = c + "";//数值+“”代表字符串
+
+        if (sc.length == 1) {
+            sc = "0000" + sc;
+        } else if (sc.length == 2) {
+            sc = "000" + sc;
+        } else if (sc.length == 3) {
+            sc = "00" + sc
+        } else if (sc.length == 4) {
+            sc = "0" + sc
+        }
+
+        for (var i = 0; i < 5; i++) {
+            $("#p_item" + (i + 1)).text(sc[i])
+        }
+
+    }
+    $("#p_add").click(function () {
+        c++;
+        setPoint(c)
+    });
+
+    $("#p_red").click(function () {
+        c--;
+        if (c < 0) c = 0;
+        setPoint(c)
+    });
+
+
+    console.log(c);
+
+</script>
+</body>
+</html>

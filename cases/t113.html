@@ -1,0 +1,76 @@
+<!DOCTYPE>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no"/>
+    <title>t113即时输入改变样式</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            font-family: "微软雅黑", Arial;
+            font-size: 16px;
+        }
+        .main{
+            width: 300px;
+            margin:0 auto;
+        }
+
+        #dv {
+            height: 100px;
+            width: 200px;
+            background-color: green;
+            padding-top: 50px;
+            margin-bottom: 20px;
+            margin-left:25px;
+        }
+        #dv>p{
+            width:160px;
+            margin-left:20px;
+            color: #fff;
+            line-height: 30px;
+        }
+        input,button{
+            padding:3px;
+            margin:3px;
+        }
+        #btn1{
+            margin-left:80px;
+            margin-top:20px;
+        }
+
+    </style>
+
+</head>
+<body>
+<div class="main">
+<div id="dv"><p>任意输入属性名和属性值点击确定改变样式</p></div>
+<p>属性名:<input value="background"></p>
+<p>属性值:<input value="red"></p>
+<button id="btn1">确定</button>
+<button id="btn2">重置</button>
+</div>
+<script>
+    function change(elem, attr, val) {
+         return elem.style[attr]= val;
+    }
+    window.onload = function () {
+        var dv = document.getElementById("dv");
+        var btn1 = document.getElementById("btn1");
+        var btn2 = document.getElementById("btn2");
+        var input = document.getElementsByTagName("input");
+        btn1.onclick = function () {
+
+            change(dv, input[0].value, input[1].value);
+        }
+        btn2.onclick = function () {
+
+            dv.removeAttribute("style");
+        }
+    }
+</script>
+
+</body>
+</html>
+

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+   <title>t12倒计时效果</title>
+   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+   <script src="http://libs.baidu.com/jquery/1.10.2/jquery.min.js"></script>
+    
+	<style>
+	body,p{
+	margin:0px;
+	padding:0px;
+	list-style:none;
+	}
+    .main{
+        width:300px;
+        margin:0 auto;
+        padding-top: 120px;
+    }
+    h2{
+        color: darkred;
+    }
+	span{
+        font-size: 22px;
+    }
+
+
+   </style>
+   
+</head>
+<body>
+
+<div class="main">
+ <h2>距离2017年春节还有：</h2>
+ <span id="dd">天</span>
+ 
+ <span id="hh">时</span>
+ 
+ <span id="mm">分</span>
+ 
+ <span id="ss">秒</span>
+ 
+</div>
+
+
+<script>
+/*
+
+*/
+function demo(){
+  var  end = new Date('2017/01/28 00:00:00');
+  var  start = new Date();
+  var  tt = end.getTime()-start.getTime();
+  
+  var  d=0;
+  var  h=0;
+  var  m=0;
+  var  s=0;
+  
+  if(tt>=0){
+  d=Math.floor(tt/1000/60/60/24);
+  h=Math.floor(tt/1000/60/60%24);
+  m=Math.floor(tt/1000/60%60);
+  s=Math.floor(tt/1000%60);
+  }
+   
+  document.getElementById("dd").innerHTML=d + "天";
+  document.getElementById("hh").innerHTML=h + "小时";
+  document.getElementById("mm").innerHTML=m + "分钟";
+  document.getElementById("ss").innerHTML=s + "秒";
+  
+}
+  
+  setInterval(demo,0);
+</script>
+
+
+</body>
+</html>

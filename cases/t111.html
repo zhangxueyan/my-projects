@@ -1,0 +1,62 @@
+<!DOCTYPE>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no"/>
+    <title>t111数字求和</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            font-family: "微软雅黑", Arial;
+            font-size: 22px;
+        }
+        .main{
+            width: 500px;
+            margin:100px auto;
+        }
+        span{
+            color: #333;
+            font-size: 12px;
+        }
+        p{
+            margin-top: 30px;
+            color: darkgreen;
+        }
+
+    </style>
+
+</head>
+<body>
+<div class="main">
+    <input type="text" value="2,5,8,1,4">
+    <button>求和</button>
+    <span>输入数字以半角状态下","分割</span>
+    <p></p>
+</div>
+<script>
+    window.onload = function () {
+
+        var oInput = document.getElementsByTagName("input")[0];
+        var oBtn = document.getElementsByTagName("button")[0];
+        var op = document.getElementsByTagName("p")[0];
+        oInput.onkeyup = function () {
+            this.value = this.value.replace(/[^(\d)|(,)]/, "")
+        }
+        oBtn.onclick = function () {
+            var sum = 0;   //split把字符串分割成数组
+            var oInput = document.getElementsByTagName("input")[0].value.split(",");
+            //按照逗号把字符串转换成数组[2,5,8,10]
+            for (var i in oInput)//如果是对象的话遍历对象属性名，如果是数组则是数组下标
+            {
+                sum += parseInt(oInput[i])
+            }
+            op.innerHTML = sum;
+        }
+    }
+</script>
+
+</body>
+</html>
+

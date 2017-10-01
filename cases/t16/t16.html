@@ -1,0 +1,77 @@
+<!DOCTYPE>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no"/>
+    <title>t16网页换肤效果</title>
+    <link href="green.css" rel="stylesheet" type="text/css" />
+    <style>
+        *{
+            margin:0;
+            padding: 0;
+            list-style: none;
+            font-family:"微软雅黑",Arial;
+            font-size:14px;
+        }
+        .clearfix{
+            clear: both;
+        }
+        #skin{
+            margin: 50px auto;
+            width: 500px;
+        }
+        #skin>li{
+            float: left;
+            height:6px;
+            width:6px;
+            border-width:4px;
+            border-style:solid;
+            cursor: pointer;
+            margin-right:10px;
+        }
+        #skin>li.current{
+            background-color: #fff!important;
+        }
+        #red{
+            background-color: red;
+            border-color: red;
+        }
+        #green{
+            background-color: green;
+            border-color: green;
+        }
+        #black{
+            background-color: #000000;
+            border-color: #000000;
+        }
+    </style>
+
+</head>
+<body>
+
+    <ul id="skin">
+        <li id="green" title="绿色" class="current"></li>
+        <li id="red" title="红色"></li>
+        <li id="black" title="黑色"></li>
+        <div class="clearfix"></div>
+    </ul>
+
+<script>
+    //点击换肤改变换肤按钮样式以及 body的样式 给当前的添加current类以及改变对应颜色css文件
+    window.onload = function () {
+        var olink = document.getElementsByTagName("link")[0];//首页默认链接到link[0]style样式表中的
+        var oskin = document.getElementById("skin").getElementsByTagName("li");//获取li接口
+        for (var i = 0; i < oskin.length; i++) {//遍历li
+            oskin[i].onclick = function () {
+                //检测此时li没有在当前类
+//                for (var p in oskin) oskin[p].className = "";
+                this.className = "current";
+                olink["href"] = this.id + ".css";
+            }
+        }
+    }
+
+</script>
+</body>
+</html>
+

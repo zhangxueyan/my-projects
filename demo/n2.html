@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>jQuery动态数字翻滚计数到指定数字的文字特效代码</title>
+  <script src="http://cdn.static.runoob.com/libs/jquery/1.10.2/jquery.min.js"></script>
+  <style type="text/css">
+    span {
+      width: 100px;
+      height: 50px;
+      border: 1px solid red;
+      display: inline-block;
+    }
+  </style>
+</head>
+
+<body>
+<span class="box1">0</span>
+<span class="box2">0</span>
+<span class="box3">0</span>
+<span class="box4">0</span>
+<script type="text/javascript">
+
+// 普通方式
+// window.onload = function() {
+  // var $box = $(".box");
+  // var num = $box.text();
+  // var c = Number(num);
+  // console.log(c)
+
+  // var t = setInterval(function(){
+  //     c += 20;
+  //     console.log(c)
+  //     box.innerHTML = c ;
+  // },50)
+
+  // setTimeout(function(){
+  //  clearInterval(t)
+  // },1000); 
+// }
+
+
+
+// jQuery插件开发
+(function ($) {
+    $.fn.myPlugin = function (sel,data) {
+        var $box = $(sel);
+        var num = $box.text();
+        var c = Number(num);
+        var t = setInterval(function(){
+            c += data;
+            $box.text(c);
+        },50)
+
+        setTimeout(function(){
+         clearInterval(t)
+        },1000); 
+    };
+})(jQuery);
+
+$('#element').myPlugin(".box1",20);
+$('#element').myPlugin(".box2",30);
+$('#element').myPlugin(".box3",50);
+$('#element').myPlugin(".box4",100);
+
+
+
+</script>
+</body>
+</html>

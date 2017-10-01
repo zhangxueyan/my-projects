@@ -1,0 +1,83 @@
+<!DOCTYPE>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no"/>
+    <title>t116鼠标经过显示提示框</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            font-family: "微软雅黑", Arial;
+            font-size: 16px;
+        }
+
+        .clearfix {
+            clear: both;
+        }
+
+        .main {
+            width: 500px;
+            margin: 50px auto;
+            border: 2px solid #cccccc;
+        }
+
+        .main > li {
+            height: 100px;
+            width: 100px;
+            background: red;
+            margin-right: 20px;
+            float: left;
+            position: relative;
+        }
+
+        .mask {
+            position: absolute;
+            height: 100%;
+            width: 100%;
+            left: 0;
+            top: 0;
+            background: green;
+            display: none;
+        }
+
+
+    </style>
+
+</head>
+<body>
+<ul class="main">
+    <li>
+        <div class="mask"></div>
+    </li>
+    <li>
+        <div class="mask"></div>
+    </li>
+
+    <div class="clearfix"></div>
+
+</ul>
+<script>
+    window.onload = function () {
+        var oli = document.getElementsByTagName("li");
+        var oms = document.getElementsByClassName("mask");
+        for (var i = 0; i < oli.length; i++) {
+            oms[i].index = i;
+            oli[i].onmouseenter = function () {
+                oms[this.index].style.display = "block";
+
+            }
+
+            oli[i].onmouseleave = function () {
+                oms[this.index].style.display = "none";
+            }
+
+        }
+
+    }
+</script>
+
+</body>
+</html>
+

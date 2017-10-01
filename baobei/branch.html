@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>分店展示</title>
+    <!--<link rel="stylesheet" href="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/css/bootstrap.min.css">-->
+    <script src="http://cdn.static.runoob.com/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="js/jquery-1.9.1.min.js"></script>
+    <script src="js/animate.js"></script>
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/master.css">
+</head>
+<body>
+
+<header>
+    <div class="logo"><img src="images/logo.gif"></div>
+    <nav>
+        <li><a href="index.html">首页</a></li>
+        <li><a href="works.html">作品欣赏</a></li>
+        <li><a href="branch.html">分店展示</a></li>
+        <li><a href="package.html">套餐专区</a></li>
+        <div class="clearfix"></div>
+    </nav>
+    <div class="clearfix"></div>
+</header>
+<div class="in_banner"></div>
+<div class="in_branch">
+    <ul class="in_w1">
+        <li class="in_current"><a href="#">传奇店</a></li>
+        <li><a href="#">神奇店</a></li>
+        <li><a href="#">瞬间店</a></li>
+        <li><a href="#">神话店</a></li>
+        <li><a href="#">奇迹店</a></li>
+        <div class="clearfix"></div>
+    </ul>
+    <div class="in_br">
+        <h2>传奇店</h2>
+        <p>宝贝驾到传奇摄影是立足于郑州定位高端的专业级儿童摄影名店，从2010年至今，宝贝驾到在不断的完善和成熟，一直以来
+            以真实、自然的拍摄手法，金牌服务的产品，个性十足的设计理念，为宝宝留下珍藏百年照片而努力。“宝贝驾到”定位准
+            确，取百家之长，寻找个性定位，风格独树一帜。在开业初期为了迅速扩大知名度，我们推出了各种宣传推广活动。
+            “宝贝驾到”的推出，使这个品牌迅速在河南省乃至全国备受关注,到目前为止我们已拥有数家加盟商。</p>
+        <h2>周边环境</h2>
+        <ul class="sur">
+            <li class="mr"><img src="images/sur_01.jpg"></li>
+            <li class="mr"><img src="images/sur_02.jpg"></li>
+            <li><img src="images/sur_03.jpg"></li>
+            <div class="clearfix"></div>
+        </ul>
+        <h2>店内环境</h2>
+        <div class="ind">
+            <ul class="ind1">
+                <li class="mrb"><img src="images/indoor_01.jpg"></li>
+                <li class="mrb"><img src="images/indoor_03.jpg"></li>
+                <li class="mb"><img src="images/indoor_05.jpg"></li>
+                <div class="clearfix"></div>
+            </ul>
+            <ul class="ind2">
+                <li class="mrb"><img src="images/indoor_02.jpg"></li>
+                <li class="mrb"><img src="images/indoor_04.jpg"></li>
+                <li class="mb"><img src="images/indoor_06.jpg"></li>
+                <div class="clearfix"></div>
+            </ul>
+            <div class="clearfix"></div>
+        </div>
+    </div>
+
+    <div class="in_map">
+        <!-- 百度地图div -->
+        <!DOCTYPE html>
+        <html>
+        <head>
+            <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+            <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+            <style type="text/css">
+                #allmap {height: 500px;width:1000px;overflow: hidden;margin: 0 auto;}
+            </style>
+            <script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=fFohTqeHG3VLnQ1PpX5bbDe7KrQG0Ge4"></script>
+            <script type="text/javascript" src="http://api.map.baidu.com/library/SearchInfoWindow/1.5/src/SearchInfoWindow_min.js"></script>
+            <link rel="stylesheet" href="http://api.map.baidu.com/library/SearchInfoWindow/1.5/src/SearchInfoWindow_min.css" />
+            <title>带检索功能的信息窗口</title>
+        </head>
+        <body>
+        <div id="allmap">
+        </div>
+        <script type="text/javascript">
+            // 百度地图API功能
+            var map = new BMap.Map('allmap');
+            var poi = new BMap.Point(116.27968,40.026125);
+            map.centerAndZoom(poi, 16);
+            map.enableScrollWheelZoom();
+
+            var content = '<div style="margin:0;line-height:20px;padding:2px;">' +
+                    '<img src="../img/baidu.jpg" alt="" style="float:right;zoom:1;overflow:hidden;width:100px;height:100px;margin-left:3px;"/>' +
+                    '地址：北京市海淀区上地十街10号<br/>电话：(010)59928888<br/>简介：百度大厦位于北京市海淀区西二旗地铁站附近，为百度公司综合研发及办公总部。' +
+                    '</div>';
+
+            //创建检索信息窗口对象
+            var searchInfoWindow = null;
+            searchInfoWindow = new BMapLib.SearchInfoWindow(map, content, {
+                title  : "百度大厦",      //标题
+                width  : 290,             //宽度
+                height : 105,              //高度
+                panel  : "panel",         //检索结果面板
+                enableAutoPan : true,     //自动平移
+                searchTypes   :[
+                    BMAPLIB_TAB_SEARCH,   //周边检索
+                    BMAPLIB_TAB_TO_HERE,  //到这里去
+                    BMAPLIB_TAB_FROM_HERE //从这里出发
+                ]
+            });
+            var marker = new BMap.Marker(poi); //创建marker对象
+            marker.enableDragging(); //marker可拖拽
+            marker.addEventListener("click", function(e){
+                searchInfoWindow.open(marker);
+            })
+            map.addOverlay(marker); //在地图中添加marker
+            //样式1
+            var searchInfoWindow1 = new BMapLib.SearchInfoWindow(map, "地址：河南省郑州市东大街长江广场A905", {
+                title: "宝贝驾到儿童摄影店", //标题
+                panel : "panel", //检索结果面板
+                enableAutoPan : true, //自动平移
+                searchTypes :[
+                    BMAPLIB_TAB_FROM_HERE, //从这里出发
+                    BMAPLIB_TAB_SEARCH   //周边检索
+                ]
+            });
+            function openInfoWindow1() {
+                searchInfoWindow1.open(new BMap.Point(113.691445,34.754318));
+            }
+
+            openInfoWindow1();
+        </script>
+        </body>
+        </html>
+
+        <!-- 百度地图div -->
+    </div>
+</div>
+
+<div class="line"></div>
+<footer>
+    <div class="f1">
+        <div  class="f11">
+            <li><a  href="#">作品欣赏</a></li>
+            <li><a  href="#">分店展示</a></li>
+            <li><a  href="#">套餐专区</a></li>
+            <li><a  href="#">招商加盟</a></li>
+            <li><a  href="#">关于我们</a></li>
+            <li><a class="fa" href="#">行业资讯</a></li>
+            <div class="clearfix"></div>
+        </div>
+        <div class="f12">
+            <ul>
+                <li><a href="#">儿童系列</a></li>
+                <li><a href="#">新生儿系列</a></li>
+                <li><a href="#">主题系列</a></li>
+                <li><a href="#">亲子系列</a></li>
+                <li><a href="#">孕妈系列</a></li>
+            </ul>
+
+            <ul>
+                <li><a href="#">传奇店</a></li>
+                <li><a href="#">神奇店</a></li>
+                <li><a href="#">神话店</a></li>
+                <li><a href="#">瞬间店</a></li>
+                <li><a href="#">奇迹店</a></li>
+            </ul>
+
+            <ul>
+                <li><a href="#">团购专区</a></li>
+                <li><a href="#">热卖专区</a></li>
+            </ul>
+
+            <ul>
+                <li><a href="#">品牌优势</a></li>
+                <li><a href="#">加盟专区</a></li>
+                <li><a href="#">加盟流程</a></li>
+                <li><a href="#">加盟动态</a></li>
+                <li><a href="#">全国布局</a></li>
+            </ul>
+
+            <ul>
+                <li><a href="#">企业简介</a></li>
+                <li><a href="#">企业新闻</a></li>
+                <li><a href="#">人才招聘</a></li>
+            </ul>
+
+            <ul>
+                <li><a href="#">常见问题</a></li>
+                <li><a href="#">注意事项</a></li>
+            </ul>
+            <div class="clearfix"></div>
+        </div>
+        <div class="f13">
+            <span class="fl">友情链接</span>
+            <!--字母L小写-->
+            <a class="wm" href="#">网站地图</a>
+            <a class="cn" href="#">版权声明</a>
+            <span class="sh">分享到</span>
+            <a class="wx" href="javascript:;"></a>
+            <a class="wb" href="javascript:;"></a>
+            <a class="qq" href="javascript:;"></a>
+        </div>
+        <div class="f14">
+            <p>郑州宝贝驾到儿童摄影机构CopyRight （2010-2018） www.bbjd.com All Rights Reserved</p>
+        </div>
+    </div>
+    <div  class="f2">
+        <h2>客服电话：0371-66348885</h2>
+        <p>郑州宝贝驾到儿童摄影机构<br>
+            在线咨询：http://bbjd2014.taobao.com<br>
+            联系地址：郑州市东大街长江广场A905</p>
+        <div class="f21">
+            <li><img src="images/code01.gif"><p>官方微信</p></li>
+            <li><img src="images/code01.gif"><p>手机网站</p></li>
+            <div class="clearfix"></div>
+        </div>
+    </div>
+    <div class="clearfix"></div>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <title>t31文字上下晃动效果</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <script src="http://libs.baidu.com/jquery/1.10.2/jquery.min.js"></script>
+
+    <style>
+        p {
+            width: 500px;
+            line-height: 60px;
+            border: 1px solid red;
+            border-radius: 5px;
+            background-color: red;
+            position: absolute;
+            left: 700px;
+            top: 300px;
+            animation: myfirst 3s linear infinite;
+            text-align: center;
+            color: #fff;
+            font-size:22px;
+        }
+        p:before {
+            content: "";
+            height: 0;
+            width: 0;
+            position: absolute;
+            border: 16px solid transparent;
+            border-top: 16px solid red;
+            left: 50%;;
+            top: 100%;
+            margin-left:-8px;
+        }
+
+        @keyframes myfirst {
+            0% {
+                top: 300px;
+            }
+            50% {
+                top: 350px;
+            }
+            100% {
+                top: 300px;
+
+            }
+        }
+
+    </style>
+
+</head>
+<body>
+<p id="myfirst">文字一直上下晃动的效果、提示作用</p>
+</body>
+</html>

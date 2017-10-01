@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>t21轮播图效果展示</title>
+    <script src="http://cdn.static.runoob.com/libs/jquery/1.10.2/jquery.min.js"></script>
+    <style>
+        *{
+            margin:0;
+            padding: 0;
+            list-style: none;
+            font-family: "微软雅黑",arial;
+            font-size:14px;
+            color: #333;
+        }
+        dl,dd,p{
+            margin:0;
+            padding: 0;
+        }
+        /*banner*/
+        .banner {
+            width: 960px;
+            margin:0 auto;
+            height: 300px;
+            overflow: hidden;
+            position: relative;
+            margin-bottom: 40px;;
+        }
+        .img_box img {
+            display: block;
+            float: left;
+        }
+
+        .arrow_l, .arrow_r {
+            position: absolute;
+            top: 50%;
+            margin-top: -50px;
+            cursor: pointer;
+        }
+
+        .arrow_r {
+            right: 0;
+        }
+
+        .rounds {
+            position: absolute;
+            left: 50%;
+            top: 90%;
+            margin-left: -40px;
+        }
+
+        .rounds li {
+            width: 20px;
+            height: 20px;
+            background-color: #fbfafd;
+            border-radius: 50%;
+            float: left;
+            margin-right: 10px;
+            cursor: pointer;
+        }
+
+        .rounds .current {
+            background-color: #cca9ff;
+        }
+    </style>
+</head>
+<body>
+<div class="banner">
+    <div class="img_box">
+        <img src="images/bb03.jpg">
+        <img src="images/bb06.jpg">
+        <img src="images/bb04.jpg">
+
+        <div class="clearfix"></div>
+    </div>
+
+    <div class="arrow_l"><img src="images/arrow_left.png"></div>
+    <div class="arrow_r"><img src="images/arrow_right.png"></div>
+
+    <ul class="rounds">
+        <li class="current"></li>
+        <li></li>
+        <li></li>
+    </ul>
+
+</div>
+<script>
+    $(".img_box img").hide().eq(0).show();
+    var x = 0;
+    //左右箭头轮播效果
+    $(".arrow_r").click(function(){
+        if(x<2){
+            x = x+1;
+        }
+        else{x = 0}
+        $(".img_box img").hide().eq(x).show();
+        $(".rounds li").eq(x).addClass("current").siblings().removeClass("current");
+    })
+    $(".arrow_l").click(function(){
+        if(x>0){
+            x = x-11;
+        }
+        else{x = 2}
+        $(".img_box img").hide().eq(x).show();
+        $(".rounds li").eq(x).addClass("current").siblings().removeClass("current");
+    })
+    //圆圈轮播效果
+    $(".rounds li").click(function(){
+        x= $(this).index()
+        $(".rounds li").eq(x).addClass("current").siblings().removeClass("current");
+        $(".img_box img").hide().eq(x).show();
+    })
+    //定时滚动效果
+    var t = setInterval(dingshi,3000)
+    function dingshi(){
+        if(x<2){
+            x = x+1;
+        }
+        else{x = 0}
+        $(".img_box img").hide().eq(x).show();
+        $(".rounds li").eq(x).addClass("current").siblings().removeClass("current");
+    }
+    $(".img_box img").mouseenter(
+            function () {
+                clearInterval(t)
+            })
+
+    $(".img_box img").mouseleave(
+            function () {
+                dingshi()
+                t = setInterval(dingshi, 3000)
+            })
+</script>
+</body>
+</html>

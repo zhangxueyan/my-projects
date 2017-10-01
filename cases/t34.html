@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <title>t34渐变效果实现</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <script src="http://libs.baidu.com/jquery/1.10.2/jquery.min.js"></script>
+
+    <style>
+        *{
+            margin:0;
+            padding:0 ;
+            list-style: none;
+            font-family:"微软雅黑",arial;
+            font-size:14px;
+        }
+        a{
+            text-decoration: none;
+        }
+        .clearfix{
+            clear: both;
+        }
+        .main{
+            width:1630px;
+            margin:0 auto;
+            margin-top:40px;
+        }
+        .main>li{
+            height:400px;
+            width:400px;
+            float:left;
+            margin-left:10px;
+        }
+        .main>li:first-child{
+            margin-left:0;
+        }
+        .main>li>p{
+            line-height:400px;
+            font-size: 22px;
+            color:#fff;
+            text-align: center;
+        }
+        .item1{
+            background: -webkit-linear-gradient(green, yellow); /* Safari 5.1 - 6.0 */
+            background: -o-linear-gradient(green, yellow); /* Opera 11.1 - 12.0 */
+            background: -moz-linear-gradient(green, yellow); /* Firefox 3.6 - 15 */
+            background: linear-gradient(green, yellow); /* 标准的语法 */
+        }
+
+        .item2{
+            background: -webkit-linear-gradient(left,green, yellow); /* Safari 5.1 - 6.0 */
+            background: -o-linear-gradient(left,green, yellow); /* Opera 11.1 - 12.0 */
+            background: -moz-linear-gradient(left,green, yellow); /* Firefox 3.6 - 15 */
+            background: linear-gradient(left,green, yellow); /* 标准的语法 */
+        }
+
+        .item3{
+            background: -webkit-linear-gradient(left top,green, yellow); /* Safari 5.1 - 6.0 */
+            background: -o-linear-gradient(left top,green, yellow); /* Opera 11.1 - 12.0 */
+            background: -moz-linear-gradient(left top,green, yellow); /* Firefox 3.6 - 15 */
+            background: linear-gradient(left top,green, yellow); /* 标准的语法 */
+        }
+        .item4{
+            background: -webkit-linear-gradient(180deg,green, yellow); /* Safari 5.1 - 6.0 */
+            background: -o-linear-gradient(180deg,green, yellow); /* Opera 11.1 - 12.0 */
+            background: -moz-linear-gradient(180deg,green, yellow); /* Firefox 3.6 - 15 */
+            background: linear-gradient(180deg,green, yellow); /* 标准的语法 */
+        }
+
+        .item5 {
+            background: -webkit-radial-gradient(red, green, blue); /* Safari 5.1 - 6.0 */
+            background: -o-radial-gradient(red, green, blue); /* Opera 11.6 - 12.0 */
+            background: -moz-radial-gradient(red, green, blue); /* Firefox 3.6 - 15 */
+            background: radial-gradient(red, green, blue); /* 标准的语法 */
+        }
+        .item6 {
+            background: -webkit-radial-gradient(red 5%, green 15%, blue 60%); /* Safari 5.1 - 6.0 */
+            background: -o-radial-gradient(red 5%, green 15%, blue 60%); /* Opera 11.6 - 12.0 */
+            background: -moz-radial-gradient(red 5%, green 15%, blue 60%); /* Firefox 3.6 - 15 */
+            background: radial-gradient(red 5%, green 15%, blue 60%); /* 标准的语法 */
+        }
+
+        .item7 {
+            background: -webkit-repeating-radial-gradient(red, blue 10%, green 15%); /* Safari 5.1 - 6.0 */
+            background: -o-repeating-radial-gradient(red, blue 10%, green 15%); /* Opera 11.6 - 12.0 */
+            background: -moz-repeating-radial-gradient(red, blue 10%, green 15%); /* Firefox 3.6 - 15 */
+            background: repeating-radial-gradient(red, blue 10%, green 15%); /* 标准的语法（必须放在最后） */
+        }
+
+        .item8 {
+            background: -webkit-radial-gradient(circle, red, yellow, green); /* Safari 5.1 - 6.0 */
+            background: -o-radial-gradient(circle, red, yellow, green); /* Opera 11.6 - 12.0 */
+            background: -moz-radial-gradient(circle, red, yellow, green); /* Firefox 3.6 - 15 */
+            background: radial-gradient(circle, red, yellow, green); /* 标准的语法（必须放在最后） */
+        }
+    </style>
+
+</head>
+<body>
+<ul class="main">
+    <li class="item1"><p>从上到下的渐变</p></li>
+    <li class="item2"><p>从左到右的渐变</p></li>
+    <li class="item3"><p>从左上角到右下角的渐变</p></li>
+    <li class="item4"><p>指定角度（180deg为默认上到下）</p></li>
+    <div class="clearfix"></div>
+</ul>
+
+<ul class="main">
+    <li class="item5"><p>径向渐变(从内到外)</p></li>
+    <li class="item6"><p>径向渐变(颜色不均分布)</p></li>
+    <li class="item7"><p>径向渐变(彩虹效果)</p></li>
+    <li class="item8"><p>径向渐变(正圆形效果)</p></li>
+    <div class="clearfix"></div>
+</ul>
+</body>
+</html>

@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>t24标签页效果</title>
+    <script src="http://cdn.static.runoob.com/libs/jquery/1.10.2/jquery.min.js"></script>
+    <link rel="stylesheet" href="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="http://cdn.static.runoob.com/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            font-family: "微软雅黑", arial;
+            font-size: 14px;
+        }
+
+        .clearfix {
+            clear: both;
+        }
+
+        a {
+            text-decoration: none;
+            color: #333;
+        }
+
+
+        /*news部分*/
+        .news {
+            width: 100%;
+            height: 500px;
+            background-color: #f5f5ef;
+            margin-bottom: 40px;
+        }
+
+        .news .wrap {
+            width: 1000px;
+            margin: 0 auto;
+        }
+
+        /*修改插件的属性*/
+        .nav-tabs{
+            border-bottom:none;
+            width:344px;
+            margin:0 auto;
+            padding:30px 0;
+        }
+        .nav-tabs>li.active>a, .nav-tabs>li.active>a:focus, .nav-tabs>li.active>a:hover{
+            background-color:transparent;
+            color:#dd0949;
+            cursor: pointer;
+            border: none;
+        }
+
+        .nav-tabs>li>a{
+            color: #333;
+            font-size: 35px;
+            border: none;
+        }
+        .nav-tabs>li:hover{
+            background-color:transparent;
+        }
+        .nav-tabs>li>a:hover{
+            background-color:transparent;
+            cursor: pointer;
+            border: none;
+        }
+
+        /*修改插件的属性*/
+
+        #myTabContent li{
+            width:333px;
+            padding-left: 40px;
+            padding-right: 40px;
+            border-right:1px solid #dddddd;
+            float: left;
+        }
+        #myTabContent li .date span{
+            color: #b5b5b5;
+        }
+        #myTabContent li h3 a{
+            font-size: 22px;
+            color: #333;
+        }
+        #myTabContent li h3 a:hover{
+            text-decoration: none;
+            color:#dd0949;
+        }
+        #myTabContent li p{
+            line-height: 28px;
+            margin-bottom: 20px;
+        }
+        #myTabContent li>a{
+            display: block;
+            width:22px;
+            height: 22px;
+            background:url(images/ind_8.png);
+        }
+        #home li:nth-child(2)>a,#ios li:nth-child(2)>a{
+            background:url(images/ind_9.png);
+        }
+        #home li:nth-child(3)>a,#ios li:nth-child(3)>a{
+            background:url(images/ind_10.png);
+        }
+        #myTabContent li:nth-last-child(2){
+            border: none;
+        }
+        .more{
+            width:120px;
+            height: 40px;
+            border: 1px solid #959595;
+            text-align: center;
+            margin:40px auto;
+
+        }
+        .more:hover{
+            background-color: #959595;
+        }
+        .more a{
+            color: #333;
+            line-height: 40px;
+
+        }
+        .more:hover a{
+            color: #fff;
+            text-decoration:none;
+        }
+        /*news部分结束*/
+
+
+
+    </style>
+</head>
+<body>
+<div class="main">
+    <div class="news">
+        <div class="wrap">
+
+            <ul id="myTab" class="nav nav-tabs">
+                <li class="active"><a href="#home" data-toggle="tab">企业新闻</a></li>
+                <li><a href="#ios" data-toggle="tab">亲子资讯</a></li>
+            </ul>
+            <div id="myTabContent" class="tab-content">
+                <div class="tab-pane fade in active" id="home">
+                    <li class="n">
+                        <div class="date">05.20<span>/2016</span></div>
+                        <h3><a href="#">我和夏天有个约会</a></h3>
+                        <p>五月六月档期告急夏天已经到来，不要再等待哦 还记得我们的约会吗来一场和相机的故事我见证你的童年你陪我惊艳这个夏天我喜欢用照片…</p>
+                        <a href="#"></a>
+                    </li>
+                    <li class="n">
+                        <div class="date">05.16<span>/2016</span></div>
+                        <h3><a href="#">宝贝驾到.触动幸福</a></h3>
+                        <p>一支想要去除繁缛复杂，重归纯净视觉的年轻工作团队.爱孩子，爱摄影，是我们的关键词。拒绝传统和流水线的拍摄模式，记录孩子自己的样子...</p>
+                        <a href="#"></a>
+                    </li>
+                    <li class="n">
+                        <div class="date">05.15<span>/2016</span></div>
+                        <h3><a href="#">儿童节限时秒杀大放价</a></h3>
+                        <p>宝贝驾到儿童摄影淘宝老顾客福利儿童节大放送了！！！亲，欢迎光临宝贝驾到官方淘宝店铺！惊喜六一，宝贝驾到儿童节大聚惠...</p>
+                        <a href="#"></a>
+                    </li>
+                    <div class="clearfix"></div>
+                </div>
+                <div class="tab-pane fade" id="ios">
+                    <li class="n">
+                        <div class="date">04.26<span>/2016</span></div>
+                        <h3><a href="#">带宝宝出游要注意什么？</a></h3>
+                        <p>安全第一选择的旅游路线以短途为好。不管是乘旅游巴士、高速列车，还是私家车，由于是身处封闭空间内，空气新鲜度差，长时…</p>
+                        <a href="#"></a>
+                    </li>
+                    <li class="n">
+                        <div class="date">04.10<span>/2016</span></div>
+                        <h3><a href="#">12饮食法帮宝贝健康补钙</a></h3>
+                        <p>孩子不能喝牛奶，不要烦恼，他可以从别的食品中得到充足的钙质。以下是12种提高孩子饮食中钙含量的有效且健康的方法…</p>
+                        <a href="#"></a>
+                    </li>
+                    <li class="n">
+                        <div class="date">04.10<span>/2016</span></div>
+                        <h3><a href="#">宝宝如何预防手足口病</a></h3>
+                        <p>手足口病是由多种肠道病毒引起的一种全球性传染病一年四季都可发生，春末夏初最为常见，发病高峰主要在5 ～ 7 月份…</p>
+                        <a href="#"></a>
+                    </li>
+                    <div class="clearfix"></div>
+                </div>
+            </div>
+            <div class="more"><a href="#">查看更多新闻</a></div>
+
+        </div>
+    </div>
+</div>
+<script>
+
+</script>
+</body>
+</html>

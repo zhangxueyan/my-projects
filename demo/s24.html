@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>圆形根据角度加样式</title>
+    <script src="js/jqurey-1.9.1.min.js"></script>
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        ul {
+            width: 1000px;
+            margin: 50px auto;
+        }
+
+        ul:after {
+            content: "";
+            display: block;
+            clear: both;
+        }
+
+        li {
+            width: 300px;
+            height: 200px;
+            background: #666;
+            float: left;
+            margin-right: 20px;
+        }
+
+        li.active {
+            background: skyblue;
+        }
+
+        .btn {
+            width: 50px;
+            height: 40px;
+        }
+
+        .btns {
+            width: 1000px;
+            margin: 50px auto;
+        }
+    </style>
+</head>
+<body>
+<div class="btns">
+    <button class="btn">按钮1</button>
+    <button class="btn">按钮2</button>
+    <button class="btn">按钮3</button>
+</div>
+<ul class="box">
+    <li>111</li>
+    <li>222</li>
+    <li>333</li>
+</ul>
+<script>
+//    方法2
+        $(function () {
+            var config = {
+                "sel_btns": ".btns button",
+                "sel_panels": ".box li"
+            };
+
+            var $btn = $(config.sel_btns);
+            var $li = $(config.sel_panels);
+            $btn.click(function (event) {
+                var btn = $(event.target),
+                        btnIndex = $btn.index(btn),
+                        $item_li = $li.eq(btnIndex);
+                window.A = btn;
+                window.B = $btn;
+                console.log(btnIndex);
+
+                $li.removeClass("active");
+                $item_li.addClass("active");
+
+            })
+        });
+</script>
+<script>
+    //    方法1
+    window.mapClick = function (options) {
+
+        var $btn = $(options.sel_btns);
+        var $li = $(options.sel_panels);
+
+
+        $btn[options.event](function (event) {
+            var btn = $(event.target),
+                    btnIndex = $btn.index(btn),
+                    $item_li = $li.eq(btnIndex);
+
+            $li.removeClass("active");
+            $item_li.addClass("active");
+        })
+    };
+
+
+    $(function () {
+        var config = {
+            "sel_btns": ".btns button",
+            "sel_panels": ".box li",
+            "event" : "mouse"
+        };
+
+        new mapClick(config);
+    })
+
+</script>
+
+</body>
+</html>

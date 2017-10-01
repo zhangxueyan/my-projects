@@ -1,2 +1,0 @@
-# demos
-my projects

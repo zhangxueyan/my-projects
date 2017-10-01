@@ -1,0 +1,70 @@
+<!DOCTYPE>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no"/>
+    <title>t115点击显示/隐藏下拉列表</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            font-family: "微软雅黑", Arial;
+            font-size: 16px;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        .main {
+            width: 500px;
+            margin: 50px auto;
+            border: 2px solid #cccccc;
+        }
+        #p.open{
+            background:#ccc url("totop.gif") no-repeat 480px 25px;
+        }
+
+        #p{
+            background:#ccc url("tobottom.gif") no-repeat 480px 25px;
+            line-height: 50px;
+            cursor: pointer;
+        }
+
+        #content > li {
+            line-height: 40px;
+            border-bottom: 1px solid green;
+        }
+
+
+    </style>
+
+</head>
+<body>
+<div class="main">
+    <p id="p">下拉列表</p>
+    <ul id="content">
+        <li><a href="#">哈喽你好</a></li>
+        <li><a href="#">你好哈喽</a></li>
+        <li><a href="#">你好吗，我很好的</a></li>
+        <li><a href="#">哈喽你好</a></li>
+    </ul>
+
+</div>
+<script>
+    window.onload = function () {
+        var op = document.getElementById("p");
+        var oc = document.getElementById("content");
+        op.onclick = function () {
+            var style = oc.style;
+            style.display = style.display == "none" ? "block" : "none";
+            this.className = style.display == "none" ? "open" : "none";
+            //还是判断列表项是否显示如果不显示 那点击之后则打开
+        }
+    }
+</script>
+
+</body>
+</html>
+
